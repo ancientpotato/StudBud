@@ -4,7 +4,9 @@
   "description": "Web App for managing study sessions",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "parcel build ./public/index.html",
+    "dev": "parcel serve ./public/index.html"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,5 @@
   },
   "devDependencies": {
     "parcel": "^2.5.0"
-  },
-  "prestart": "parcel build ./public/index.html",
-  "dev": "parcel serve ./public/index.html"
+  }
 }
