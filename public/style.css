@@ -1,0 +1,35 @@
+* {
+    font-family: 'Nunito';
+}
+
+ul.vertical-navbar {
+    list-style-type: none;
+    margin: 0px;
+    position: fixed;
+    width: 200px;
+    height: 1500px;
+    background-color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 20px;
+    padding: 30px;
+}
+
+body {
+    background-color: #F7F7F7;
+}
+
+li a.active {
+    color: #00A99D;
+
+}
+
+li a {
+    text-decoration: none;
+    color: #272951;
+}
+
+li a:hover {
+    color: #00A99D;
+}
