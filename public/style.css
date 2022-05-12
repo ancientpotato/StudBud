@@ -2,34 +2,94 @@
     font-family: 'Nunito';
 }
 
-ul.vertical-navbar {
-    list-style-type: none;
-    margin: 0px;
-    position: fixed;
-    width: 200px;
-    height: 1500px;
-    background-color: white;
-    text-decoration: none;
-    font-weight: bolder;
-    text-align: center;
-    font-size: 20px;
-    padding: 30px;
-}
 
 body {
     background-color: #F7F7F7;
 }
 
-li a.active {
-    color: #00A99D;
-
-}
-
-li a {
+.sideNavContainer {
+    text-align: center;
+    width: 120px;
+    height: auto;
+    font-size: 20px;
     text-decoration: none;
-    color: #272951;
+    font-weight: bolder;
+    background-color: white;
 }
 
-li a:hover {
-    color: #00A99D;
+
+
+.navItem:hover, .icon:hover {
+    color:#00A99D;
+    fill:#00A99D;
+
 }
+
+.navItem {
+    text-decoration: none;
+    color: #272951; 
+}
+
+
+.icon {
+    margin-top: 15px;
+}
+
+.resource-group {
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.resource-image {
+    display: block;
+    width: 80%;
+    height: 300px;
+    object-fit: cover; 
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+
+.resource-title {
+    text-align: center;
+    font-weight: bolder;
+    color:#272951;
+}
+
+.add-resource {
+    float: right;
+    color: white;
+    background-color: #00A99D;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 20px;
+    margin-right: 1%;
+
+}
+
+.add-resource:hover, .view-more-button:hover {
+    cursor: pointer;
+    background-color: #272951;
+}
+
+.view-more-button {
+    color: white;
+    background-color: #00A99D;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 10px 100px;
+    margin: 0 auto;
+    display: block;
+}
+
+.timer-menus {
+    float: right;
+}
+
+
