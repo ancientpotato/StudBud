@@ -1,12 +1,11 @@
-function openTimer() {
-    document.getElementById("timer").style.display = "block";
-}
+var groupModal = document.getElementById("addGroupModal");
+var groupBtn = document.getElementById("groupBtn");
+var close = document.getElementsByClassName("cancel-group")[0];
 
-function openGroup() {
-    document.getElementById("groupForm").style.display = "block";
-}
+ groupBtn.onclick = function() {
+    groupModal.style.display = "block";
+  }
 
-function closeGroup() {
-    document.getElementById("groupForm").style.display = "none";
-}
-
+  close.onclick = function() {
+    groupModal.style.display = "none";
+  }

@@ -2,11 +2,6 @@
     font-family: 'Nunito';
 }
 
-
-body {
-    background-color: #F7F7F7;
-}
-
 .sideNavContainer {
     text-align: center;
     width: 120px;
@@ -14,20 +9,75 @@ body {
     font-size: 20px;
     text-decoration: none;
     font-weight: bolder;
+}
+
+body {
+    display: flex;
+}
+
+.rightColumn {
+    height: 100vh;
+    width: 100%;
+    background-color: #F7F7F7;
+}
+
+.topNavBar {
+    height: 100px;
     background-color: white;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+.searchDiv,
+.countdown {
+    margin: auto;
+}
+
+.countdown {
+    display: flex;
+    background-color: white;
+    width: 30%;
 }
 
 
+.searchBar {
+    border-radius: 8px;
+    border-color: #272951;
+    width: 500px;
+    height: 50px;
+}
 
-.navItem:hover, .icon:hover {
-    color:#00A99D;
-    fill:#00A99D;
+::placeholder {
+    color: #272951;
+    font-size: 18px;
+    padding-left: 20px;
+    font-weight: bolder;
+}
+
+.counterNum {
+    font-weight: bolder;
+    font-size: 25px;
+    color: #272951;
+}
+
+.counterMode {
+    color: #00A99D;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.navItem:hover,
+.icon:hover {
+    color: #00A99D;
+    fill: #00A99D;
 
 }
 
 .navItem {
     text-decoration: none;
-    color: #272951; 
+    color: #272951;
 }
 
 
@@ -35,61 +85,181 @@ body {
     margin-top: 15px;
 }
 
-.resource-group {
-    background-color: white;
-    border-radius: 50px;
-    box-shadow: 50px;
+.resourceContent {
     display: flex;
     justify-content: space-between;
 }
-.resource-image {
-    display: block;
-    width: 80%;
-    height: 300px;
-    object-fit: cover; 
-    margin-left: auto;
-    margin-right: auto;
-    padding: 30px;
+
+.resourceContent h2 {
+    margin-left: 20px;
+    font-weight: bolder;
+    color: #272951;
 }
 
-.resource-title {
-    text-align: center;
-    font-weight: bolder;
-    color:#272951;
-}
-
-.add-resource {
-    float: right;
-    color: white;
-    background-color: #00A99D;
-    border: none;
-    border-radius: 10px;
-    font-size: 25px;
-    font-weight: bolder;
+.card {
+    background-color: white;
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
     padding: 20px;
-    margin-right: 1%;
-
+    box-shadow: 10px 10px 10px #E8EDF6;
+    margin-left: 20px;
 }
 
-.add-resource:hover, .view-more-button:hover {
+.smallerIcons:hover {
+    fill: #00A99D;
     cursor: pointer;
-    background-color: #272951;
+
 }
 
-.view-more-button {
-    color: white;
+.groupTitle {
+    font-size: 35px;
+    font-weight: bolder;
+    color: #272951;
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardDescription,
+.expandButton {
+    text-align: center;
+}
+
+.cardDescription {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 210px;
+}
+
+.expandButton button {
     background-color: #00A99D;
-    border: none;
-    border-radius: 10px;
+    border-style: none;
+    border-radius: 8px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
     font-size: 25px;
     font-weight: bolder;
-    padding: 10px 100px;
-    margin: 0 auto;
-    display: block;
+    cursor: pointer;
 }
 
-.timer-menus {
-    float: right;
+.addGroup {
+    background-color: #00A99D;
+    border-style: none;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 20px;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
+.groupModal {
+    display: none;
+    margin: auto;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+
+    background-color: rgba(0,0,0,0.4);
+
+}
+
+.addGroupModalContent {
+    background-color: white;
+    border-radius: 30px;
+    width: 40%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+}
+
+.addGroupModalContent h1 {
+    padding: 15px 15px 0px 15px;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-left: 20px;
+    color: #272951;
+}
+
+.modalSubheading {
+    color: #888A9F;
+    font-size: 30px;
+    margin-left: 35px;
+}
+
+.groupUserInputTitle, .groupUserInputDescription {
+    border-radius: 5px;
+    width: 100%;
+    margin-left: 35px;
+    border-color: #272951;
+    font-size: 20px;
+}
+
+.groupUserInputDescription {
+    height: 20%;
+}
+
+.audioPlayer {
+    background-color: white;
+    display: flex;
+}
+
+
+.musicNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.action-btn {
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
+    padding: 7px 13px 0px 13px;
+    margin-top: 30px;
+}
+
+.artistDetails {
+    color: #272951;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+
+
+.progressContainer {
+    background-color: #DFDFDF;
+    width: 96%;
+    height: 10px;
+    margin-left: 6px;
+    margin-top: 3%;
+}
+
+.progressBar {
+    background-color: #00A99D;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+.musicTop {
+    display: flex;
+}
+
+.imgContainer {
+    margin: auto;
+    display: flex;;
+}
 
