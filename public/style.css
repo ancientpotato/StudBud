@@ -6,9 +6,24 @@
     text-align: center;
     width: 120px;
     height: auto;
-    font-size: 20px;
+
     text-decoration: none;
+
+}
+
+.itemName {
+    font-size: 20px;
     font-weight: bolder;
+}
+
+.navTimer {
+    background-color: white;
+    border-style: none;
+}
+
+.navTimer:hover {
+    cursor: pointer;
+    color: #00A99D;
 }
 
 body {
@@ -85,12 +100,14 @@ body {
     margin-top: 15px;
 }
 
-.resourceContent {
+.resourceContent,
+.kanbanContent {
     display: flex;
     justify-content: space-between;
 }
 
-.resourceContent h2 {
+.resourceContent h2,
+.kanbanContent h2 {
     margin-left: 20px;
     font-weight: bolder;
     color: #272951;
@@ -148,7 +165,8 @@ body {
     cursor: pointer;
 }
 
-.addGroup {
+.addGroup,
+.addColumn {
     background-color: #00A99D;
     border-style: none;
     border-radius: 5px;
@@ -163,17 +181,30 @@ body {
     cursor: pointer;
 }
 
-.groupModal {
+.groupModal,
+.columnModal,
+.timerModal {
     display: none;
     margin: auto;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     height: 100%;
     justify-content: space-between;
 
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 
+}
+
+.stopwatchModal {
+    display: none;
+    margin: auto;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .addGroupModalContent {
@@ -183,6 +214,107 @@ body {
     height: 50%;
     margin: auto;
     display: flex;
+}
+
+.addColumnModalContent {
+    background-color: white;
+    width: 25%;
+    border-radius: 30px;
+    height: 35%;
+    margin: auto;
+    text-align: center;
+}
+
+.timerContent,
+.stopwatchModal {
+    background-color: white;
+    border-radius: 30px;
+    margin: auto;
+    text-align: center;
+    width: 30%;
+    height: 40%;
+}
+
+.timerBtn,
+.stopwatchBtn {
+    border-radius: 5px;
+    border-style: none;
+    background-color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 5% 7% 5% 7%;
+}
+
+#active {
+    color: #00A99D;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+}
+
+.pomodoro,
+.stopwatch {
+    font-size: 50px;
+    font-weight: bolder;
+    color: #272951;
+    margin: 5%;
+}
+
+.addColumnModalContent h1 {
+    font-weight: bolder;
+    color: #272951;
+    padding-top: 30px;
+}
+
+.inputColumnName {
+    padding: 2% 20%;
+}
+
+.inputColumnName::placeholder {
+    opacity: 50%;
+}
+
+.cancel-column,
+.save-Column,
+.cancel-timer,
+.start-timer,
+.cancel-stopwatch,
+.start-stopwatch {
+    font-size: 25px;
+    font-weight: bolder;
+    border-radius: 5px;
+    border-style: none;
+    padding: 6px 30px 6px 30px;
+}
+
+.cancel-column,
+.save-Column {
+    margin: 10%;
+}
+
+.cancel-timer,
+.start-timer,
+.cancel-stopwatch,
+.start-stopwatch {
+    margin: 4%
+}
+
+.cancel-column,
+.cancel-timer,
+.cancel-stopwatch {
+    color: #272951;
+    background-color: #E8EDF6;
+}
+
+.cancel-column:hover,
+.save-Column:hover {
+    cursor: pointer;
+}
+
+.save-Column,
+.start-timer,
+.start-stopwatch {
+    color: white;
+    background-color: #00A99D;
 }
 
 .addGroupModalContent h1 {
@@ -199,7 +331,8 @@ body {
     margin-left: 35px;
 }
 
-.groupUserInputTitle, .groupUserInputDescription {
+.groupUserInputTitle,
+.groupUserInputDescription {
     border-radius: 5px;
     width: 100%;
     margin-left: 35px;
@@ -254,12 +387,13 @@ body {
     width: 0%;
     transition: width 0.1s linear;
 }
+
 .musicTop {
     display: flex;
 }
 
 .imgContainer {
     margin: auto;
-    display: flex;;
+    display: flex;
+    ;
 }
-

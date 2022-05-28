@@ -40,7 +40,7 @@
       </div>
     </a>
 
-    <a class="navItem" href="">
+    <a class="navItem" href="resources.html">
       <div class="icon">
         <svg viewBox="0 0 351.75365 440.02385" version="1.1" sodipodi:docname="resource.svg" width="70"
           inkscape:version="1.1.2 (b8e25be833, 2022-02-05)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -62,7 +62,7 @@
       </div>
     </a>
 
-    <a class="navItem" href="">
+    <button id="timer" class="navTimer">
       <div class="icon">
         <svg viewBox="0 0 374.00445 416.88878" version="1.1" sodipodi:docname="timer.svg" width="70"
           inkscape:version="1.1.2 (b8e25be833, 2022-02-05)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -83,7 +83,7 @@
       <div class="itemName">
         Timer
       </div>
-    </a>
+    </button>
 
     <a class="navItem" href="">
       <div class="icon">
@@ -134,6 +134,139 @@
         Podcast
       </div>
     </a>
+
+  </div>
+  <!-- Top Nav Bar + Content -->
+  <div class="rightColumn">
+    <div class="topNavBar">
+      <div class="searchDiv">
+        <input class="searchBar" type="text" placeholder="Search for task..." name="search">
+      </div>
+
+      <div class="countdown">
+        <img width="40px" height="45px" src="images/timer.png">
+        <div class="counterNum">
+          4:27
+        </div>
+        <div class="counterMode">
+          Focus Mode
+        </div>
+
+      </div>
+
+      <div class="audioPlayer">
+        <div class="imgContainer">
+          <img width="90px" src="images/Kirby&tFLAM.jpg" alt="album cover" id="cover">
+        </div>
+        <div class="songDetails">
+          <div class="musicTop">
+            <div class="artistDetails">
+              <div id="songTitle">
+                Kirby and The Forgotten Land: Alivel Mall
+              </div>
+              <div id="songArtist">
+                HAL Laboratory
+              </div>
+            </div>
+
+            <div class="musicNavigation">
+              <button id="prev" class="action-btn">
+                <svg viewBox="0 0 184 190" width="20px">
+                  <defs>
+                    <style>
+                      .smallerIcons {
+                        fill: #272951;
+                      }
+                    </style>
+                  </defs>
+                  <path class="smallerIcons"
+                    d="M 11.19922,0 C 4.99442,0 0,4.99442 0,11.19922 V 178.80078 C 0,185.00558 4.99442,190 11.19922,190 H 26.79883 C 33.00363,190 38,185.00558 38,178.80078 v -73.04297 c 0.15312,0.10822 0.28948,0.22913 0.44922,0.33204 l 126.09961,81.37109 c 8.39,5.41 19.45117,-0.61156 19.45117,-10.60156 V 14.13086 C 184,4.14086 172.93883,-1.8807 164.54883,3.5293 L 38.44922,84.90039 C 38.28959,85.00343 38.15302,85.12409 38,85.23242 V 11.19922 C 38,4.99442 33.00363,0 26.79883,0 Z" />
+                </svg>
+              </button>
+
+              <button id="play" class="action-btn">
+                <svg viewBox="0 0 151.32499 187.99596" width="20px">
+                  <defs>
+                    <style>
+                      .smallerIcons {
+                        fill: #272951;
+                      }
+                    </style>
+                  </defs>
+                  <path class="smallerIcons"
+                    d="m 145.55,104.59298 -126.1,81.37 c -8.39,5.41 -19.45,-0.61 -19.45,-10.6 V 12.632981 C 0,2.6429808 11.06,-3.3770192 19.45,2.0329808 l 126.1,81.3700002 c 7.7,4.97 7.7,16.23 0,21.189999 z" />
+                </svg>
+              </button>
+
+              <button id="next" class="action-btn">
+                <svg viewBox="0 0 184 190" width="20px">
+                  <defs>
+                    <style>
+                      .smallerIcons {
+                        fill: #272951;
+                      }
+                    </style>
+                  </defs>
+                  <path class="smallerIcons"
+                    d="M 157.19922,0 C 150.99442,0 146,4.99637 146,11.20117 v 74.02344 c -0.15373,-0.10889 -0.29075,-0.23045 -0.45117,-0.33399 L 19.44922,3.51953 C 11.05922,-1.89047 0,4.13109 0,14.12109 v 162.72852 c 0,9.99 11.05922,16.01156 19.44922,10.60156 l 126.09961,-81.3711 c 0.16053,-0.1034 0.29734,-0.22521 0.45117,-0.33398 v 73.05469 C 146,185.00558 150.99442,190 157.19922,190 h 15.59961 C 179.00363,190 184,185.00558 184,178.80078 V 11.20117 C 184,4.99637 179.00363,0 172.79883,0 Z" />
+                </svg>
+
+              </button>
+            </div>
+          </div>
+          <div class="progressContainer">
+            <div class="progressBar">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kanban Content -->
+    <div id="addColumnModal" class="columnModal">
+      <div class="addColumnModalContent">
+        <h1><b>Add Column</b></h1>
+        <br>
+        <input class="inputColumnName" type="text" placeholder="Name of Column" name="addColumn" required>
+        <br>
+        <div class="addColumnModalBtn">
+          <button type="button" class="cancel-column">Cancel</button>
+          <button type="submit" class="save-Column">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="openTimerModal" class="timerModal">
+      <div class="timerContent">
+        <div class="timerStopwatchBtn">
+          <button id="active" class="timerBtn">Timer</button>
+          <button id="stopwatchBtnInactive" class="stopwatchBtn">Stopwatch</button>
+        </div>
+        <div class="pomodoro">25:00</div>
+        <button class="cancel-timer">Cancel</button>
+        <button class="start-timer">Start</button>
+      </div>
+    </div>
+
+    <div id="openStopwatchModal" class="stopwatchModal">
+      <div class="stopwatchContent">
+        <div class="timerStopwatchBtn">
+          <button id="timerBtnInactive" class="timerBtn">Timer</button>
+          <button id="active" class="stopwatchBtn">Stopwatch</button>
+        </div>
+        <div class="stopwatch">00:00.00</div>
+        <button class="cancel-stopwatch">Cancel</button>
+        <button class="start-stopwatch">Start</button>
+      </div>
+    </div>
+
+    <div class="kanbanContent">
+      <h2>Workspace<h2>
+          <button id="columnBtn" class="addColumn">+ add column</button>
+    </div>
+  
+  </div>
+
 
   </div>
 </body>
