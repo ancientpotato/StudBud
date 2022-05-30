@@ -16,12 +16,13 @@
     font-weight: bolder;
 }
 
-.navTimer {
+.navTimer, .navMusic, .navPodcast {
     background-color: white;
     border-style: none;
+    color: #272951;
 }
 
-.navTimer:hover {
+.navTimer:hover, .navMusic:hover, .navPodcast:hover {
     cursor: pointer;
     color: #00A99D;
 }
@@ -206,6 +207,58 @@ body {
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
+.musicModal, .podcastModal {
+    display: none;
+    margin: auto;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.currentMusicContent, .currentPodcastContent {
+    background-color: white;
+    width: 25%;
+    height: 100%;
+    margin-left: .5%;
+    margin-top: .5%;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.modalImg {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 15px;
+}
+.progressBarContainer {
+    background-color: #DFDFDF;
+    width: 80%;
+    height: 1%;
+    margin-left: 10%;   
+}
+
+.musicModal-actionBtn, .podcastModal-actionBtn {
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 30px;
+    color: #272951;
+    padding: 2% 5% 0% 5%;
+}
+
+.songPlaylist, .podcastPlaylist {
+    display: flex;
+    margin-bottom: 4%;
+}
+
+.playlistContainter {
+    text-align: left;
+    margin-left: 3%;
+}
+
 
 .addGroupModalContent {
     background-color: white;
@@ -395,5 +448,4 @@ body {
 .imgContainer {
     margin: auto;
     display: flex;
-    ;
 }

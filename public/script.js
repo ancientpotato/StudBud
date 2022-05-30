@@ -84,3 +84,39 @@ if (timerBtnSwitch) {
     }
 }
 
+//Music Modal
+var musicModal = document.getElementById("openMusicModal");
+var musicBtn = document.getElementById("music");
+
+if (musicBtn) {
+    musicBtn.onclick = function() {
+        musicModal.style.display = "block";
+    }
+}
+
+window.onclick = function(event) {
+    if (event.target == musicModal) {
+        musicModal.style.display = "none";
+        podcastModal.style.display = "none";
+    }
+}
+
+//Podcast Modal
+var podcastModal = document.getElementById("openPodcastModal");
+var podcastBtn = document.getElementById("podcast");
+
+if (podcastBtn) {
+    podcastBtn.onclick = function() {
+        podcastModal.style.display = "block";
+    }
+}
+
+window.onclick = function(event) {
+    if (event.target == podcastModal) {
+        podcastModal.style.display = "none";
+        musicModal.style.display = "none";
+    }
+}
+
+
+
