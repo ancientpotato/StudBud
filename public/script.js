@@ -118,5 +118,23 @@ window.onclick = function(event) {
     }
 }
 
+//Kanban Modal
+
+var taskModal = document.getElementById("addTaskModal");
+var taskBtn = document.getElementById("taskBtn");
+var taskClose = document.getElementsByClassName("cancel-task")[0];
+
+if (taskBtn) {
+    taskBtn.onclick = function() {
+        taskModal.style.display = "block";
+    }
+}
+
+if (taskClose) {
+    taskClose.onclick = function() {
+        taskModal.style.display = "none";
+    }
+}
+
 
 
