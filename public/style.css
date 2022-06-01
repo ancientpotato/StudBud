@@ -16,13 +16,17 @@
     font-weight: bolder;
 }
 
-.navTimer, .navMusic, .navPodcast {
+.navTimer,
+.navMusic,
+.navPodcast {
     background-color: white;
     border-style: none;
     color: #272951;
 }
 
-.navTimer:hover, .navMusic:hover, .navPodcast:hover {
+.navTimer:hover,
+.navMusic:hover,
+.navPodcast:hover {
     cursor: pointer;
     color: #00A99D;
 }
@@ -184,7 +188,8 @@ body {
 
 .groupModal,
 .columnModal,
-.timerModal, .taskModal {
+.timerModal,
+.taskModal {
     display: none;
     margin: auto;
     position: fixed;
@@ -208,7 +213,8 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.musicModal, .podcastModal {
+.musicModal,
+.podcastModal {
     display: none;
     margin: auto;
     position: fixed;
@@ -218,7 +224,8 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.currentMusicContent, .currentPodcastContent {
+.currentMusicContent,
+.currentPodcastContent {
     background-color: white;
     width: 25%;
     height: 100%;
@@ -233,14 +240,16 @@ body {
     margin-bottom: 5%;
     border-radius: 15px;
 }
+
 .progressBarContainer {
     background-color: #DFDFDF;
     width: 80%;
     height: 1%;
-    margin-left: 10%;   
+    margin-left: 10%;
 }
 
-.musicModal-actionBtn, .podcastModal-actionBtn {
+.musicModal-actionBtn,
+.podcastModal-actionBtn {
     border-style: none;
     background-color: white;
     cursor: pointer;
@@ -249,7 +258,8 @@ body {
     padding: 2% 5% 0% 5%;
 }
 
-.songPlaylist, .podcastPlaylist {
+.songPlaylist,
+.podcastPlaylist {
     display: flex;
     margin-bottom: 4%;
 }
@@ -260,7 +270,7 @@ body {
 }
 
 
-.addGroupModalContent, .taskModalContent {
+.addGroupModalContent {
     background-color: white;
     border-radius: 30px;
     width: 40%;
@@ -268,6 +278,27 @@ body {
     margin: auto;
     display: flex;
     justify-content: space-between;
+}
+
+.taskModalContent {
+    background-color: white;
+    border-radius: 30px;
+    width: 45%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    
+}
+
+.taskModalRight {
+    margin-left: 10%;
+}
+
+.taskUserInputTitle::placeholder,
+.taskUserInputDescription::placeholder,
+.taskUserInputDueDate::placeholder {
+    color: #888A9F;
+    font-weight: initial;
 }
 
 .addColumnModalContent {
@@ -313,7 +344,8 @@ body {
     margin: 5%;
 }
 
-.addColumnModalContent h1 {
+.addColumnModalContent h1,
+.taskModalContent h1 {
     font-weight: bolder;
     color: #272951;
     padding-top: 30px;
@@ -332,7 +364,9 @@ body {
 .cancel-timer,
 .start-timer,
 .cancel-stopwatch,
-.start-stopwatch, .save-task, .cancel-task {
+.start-stopwatch,
+.save-task,
+.cancel-task {
     font-size: 25px;
     font-weight: bolder;
     border-radius: 5px;
@@ -354,7 +388,8 @@ body {
 
 .cancel-column,
 .cancel-timer,
-.cancel-stopwatch, .cancel-task {
+.cancel-stopwatch,
+.cancel-task {
     color: #272951;
     background-color: #E8EDF6;
 }
@@ -366,12 +401,14 @@ body {
 
 .save-Column,
 .start-timer,
-.start-stopwatch, .save-task {
+.start-stopwatch,
+.save-task {
     color: white;
     background-color: #00A99D;
 }
 
-.addGroupModalContent h1 {
+.addGroupModalContent h1,
+.taskModalContent h1 {
     padding: 15px 15px 0px 15px;
     font-weight: bolder;
     font-size: 40px;
@@ -383,15 +420,70 @@ body {
     color: #888A9F;
     font-size: 20px;
     margin-left: 35px;
+ 
 }
 
 .groupUserInputTitle,
-.groupUserInputDescription {
+.groupUserInputDescription,
+.taskUserInputTitle,
+.taskUserInputDescription,
+.taskUserInputDueDate,
+.addTaskRadio:nth-last-child(2),
+.estTimeContainer {
     border-radius: 5px;
     width: 100%;
     margin-left: 35px;
     border-color: #272951;
     font-size: 20px;
+}
+
+.taskPriorityRadioButtons input[type="radio"],
+.taskStatusRadioButtons input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+
+}
+
+.taskPriorityRadioButtons label,
+.taskStatusRadioButtons label {
+    background-color: white;
+    padding: 5px 15px;
+    font-size: 20px;
+    border: 2px solid #272951;
+    border-radius: 4px;
+
+}
+
+
+.taskPriorityRadioButtons label:hover,
+.taskStatusRadioButtons label:hover {
+    background-color: #272951;
+    color: white;
+}
+
+.taskPriorityRadioButtons input[type="radio"]:checked+label,
+.taskStatusRadioButtons input[type="radio"]:checked+label {
+    background-color: #272951;
+    color: white;
+}
+
+.taskPriorityRadioButtons, .taskStatusRadioButtons {
+    margin-left: 35px;
+    margin-top: 2%;
+}
+
+.taskUserInputTime {
+    width: 70px;
+    height: 50px;
+    border-radius: 7px;
+    
+}
+
+.cancel-task, .save-task {
+    margin-top: 20%;
+    margin-left: 35px;
+    
 }
 
 .groupUserInputDescription {
@@ -454,15 +546,14 @@ body {
 .kanban {
     display: flex;
     padding: 30px;
-    width: 25%
 }
 
 .kanbanColumn {
     flex: 1;
 }
 
-.kanbanColumn:not(:last-child) {
-    margin-right: 5%;
+.kanbanSpace:not(:last-child) {
+margin-right: 5%;
 }
 
 .kanbanColumnTitle {
@@ -497,7 +588,7 @@ body {
     border-color: #00A99D;
     border-radius: 7px;
     background-color: white;
-    padding: 1% 100px;
+    padding: 1% 175px;
     cursor: pointer;
     border-width: 2px;
 }
@@ -546,8 +637,8 @@ body {
 }
 
 .fa-calendar {
-font-size: 20px;
-color: #272951;
+    font-size: 20px;
+    color: #272951;
 }
 
 .kanbanNumericalItems {
@@ -568,9 +659,7 @@ color: #272951;
 
 .priority {
     padding: 5px 10px;
-    background-color: #DB2F7F;
     color: white;
+    background-color: #DB2F7F;
     border-radius: 100px;
 }
-
-

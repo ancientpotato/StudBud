@@ -246,59 +246,64 @@
           <h1>Add Task</h1>
           <label class="modalSubheading" for="task-title"><b>Title</b></label>
           <br>
-          <input class="taskUserInputTitle" type="text" placeholder="Name of Task" name="task-title" required>
-          <br>
+          <input id="task-title" class="taskUserInputTitle" type="text" placeholder="Name of Task" name="task-title"
+            required>
+          <br><br>
           <label class="modalSubheading" for="task-description"><b>Description</b></label>
           <br>
-          <input class="taskUserInputDescription" type="text" placeholder="About Task" name="task-description" required>
-          <br>
+          <textarea id="task-description" class="taskUserInputDescription" placeholder="About Task"
+            name="task-description" rows="4" cols="30"></textarea>
+          <br><br>
           <label class="modalSubheading" for="task-dueDate"><b>Due Date</b></label>
           <br>
-          <input class="taskUserInputDueDate" type="date" placeholder="DD/MM/YYYY" name="task-DueDate" value=""
-            min="1997-01-01" max="2030-12-31" required>
+          <input id="dueDate" class="taskUserInputDueDate" type="date" placeholder="DD/MM/YYYY" name="task-DueDate"
+            value="" min="1997-01-01" max="2030-12-31" required>
           <!-- to ensure a DD/MM/YYYY format since the default is MM/DD/YYYY -->
         </div>
         <div class="taskModalRight">
+          <label class="modalSubheading" for="task-priority"><b>Priority</b></label>
           <div class="taskPriorityRadioButtons">
-            <label class="modalSubheading" for="task-priority"><b>Priority</b></label>
-            <br>
-            <input type="radio" id="priority1" name="task-priority">
-            <label for="priority1">Low</label>
 
-            <input type="radio" id="priority2" name="task-priority">
-            <label for="priority2">Medium</label>
+            <input type="radio" value="LOW" id="priority1" name="task-priority">
+            <label class="addTaskRadio" for="priority1">Low</label>
 
-            <input type="radio" id="priority3" name="task-priority">
-            <label for="priority3">High</label>
+            <input type="radio" value="MEDIUM" id="priority2" name="task-priority">
+            <label class="addTaskRadio" for="priority2">Medium</label>
+
+            <input type="radio" value="HIGH" id="priority3" name="task-priority">
+            <label class="addTaskRadio" for="priority3">High</label>
           </div>
           <br>
+
+          <label class="modalSubheading" for="task-status"><b>Status</b></label>
           <div class="taskStatusRadioButtons">
-            <label class="modalSubheading" for="task-status"><b>Status</b></label>
-            <br>
+
             <input type="radio" id="status1" name="task-status">
-            <label for="status1">Done</label>
+            <label class="addTaskRadio" for="status1">Done</label>
 
             <input type="radio" id="status2" name="task-status">
-            <label for="status2">Ongoing</label>
+            <label class="addTaskRadio" for="status2">Ongoing</label>
 
             <input type="radio" id="status3" name="task-status">
-            <label for="status3">Pending</label>
+            <label class="addTaskRadio" for="status3">Pending</label>
           </div>
 
           <br>
 
           <label class="modalSubheading"><b>Estimated Time of Completion</b></label>
           <div class="estTimeContainer">
-            <input class="taskUserInputTime" type="text" placeholder="00" name="task-EstTime" required>
+            <input id="estTimeHours" class="taskUserInputTime" type="number" placeholder="00" name="task-EstTime"
+              required>
             <label for="task-EstTime">Hours</label>
 
-            <input class="taskUserInputTime" type="text" placeholder="00" name="task-EstTime" required>
+            <input id="estTimeMinutes" class="taskUserInputTime" type="number" placeholder="00" name="task-EstTime"
+              required>
             <label for="task-EstTime">Minutes</label>
           </div>
 
           <div class="addTaskModalBtn">
-            <button type="button" class="cancel-task">Cancel</button>
-            <button type="submit" class="save-task">Save</button>
+            <button onclick="closeModal()" type="button" class="cancel-task">Cancel</button>
+            <button onclick="getKanBanData()" type="submit" class="save-task">Save</button>
           </div>
 
         </div>
@@ -512,46 +517,49 @@
       <h2>Workspace<h2>
           <button id="columnBtn" class="addColumn">+ add column</button>
     </div>
+
     <div class="kanban">
       <div class="kanbanSpace">
         <div class="kanbanColumnTitle">
           TO DO
         </div>
-        <div class="kanbanColumn">
-          <button id="taskBtn" class="kanbanAddTask" type="button">+ add task</button>
-          <div class="kanbanColumnDescription">
-            <div class="taskTopRow">
-              <div class="priority">HIGH</div>
-              <i class="fa-solid fa-pen"></i>
-            </div>
-            <div class="kanbanTaskTitle">
-              Task title here
-            </div>
-            <div class="kanbanTaskDescription">
-              This is the description for the task. Click on the pen icon to start editing.
-
-            </div>
-            <div class="lineSeparation"></div>
-            <div class="kanbanNumericalItems">
-              <div class="estTime">Est. Time: 0HR 5MINS</div>
-              <div class="dueDateIcon">
-                <i class="fa-regular fa-calendar"></i>
-                <div class="dueDate"> 1 Jul</div>
-              </div>
-            </div>
-          </div>
-
+        <div id="kanBanToDo" class="kanbanColumn">
+          <button id="taskBtn" onclick="openModal()" class="kanbanAddTask" type="button">+ add task</button>
           <div class="kanbanDrop"></div>
         </div>
       </div>
 
+      <div class="kanbanSpace">
+        <div class="kanbanColumnTitle">
+          IN PROGRESS
+        </div>
+        <div id="kanBanInProgress" class="kanbanColumn">
+          <button id="taskBtn" onclick="openModal()" class="kanbanAddTask" type="button">+ add task</button>
+          <div class="kanbanDrop"></div>
+        </div>
+      </div>
+
+      <div class="kanbanSpace">
+        <div class="kanbanColumnTitle">
+          DONE
+        </div>
+        <div id="kanBanDone" class="kanbanColumn">
+          <button id="taskBtn" onclick="openModal()" class="kanbanAddTask" type="button">+ add task</button>
+         
+          <div class="kanbanDrop"></div>
+        </div>
+      </div>
+
+      
+
     </div>
-  </div>
 
 
   </div>
+
+
+
+  <script src="script.js"></script>
 </body>
-
-<script src="script.js"></script>
 
 </html>
