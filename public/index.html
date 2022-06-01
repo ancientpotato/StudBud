@@ -148,10 +148,9 @@
 
       <div class="countdown">
         <img width="40px" height="45px" src="images/timer.png">
-        <div class="counterNum">
-          4:27
+        <div id="countdownTimer" class="counterNum">
         </div>
-        <div class="counterMode">
+        <div id="timerStatus" class="counterMode">
           Focus Mode
         </div>
 
@@ -168,51 +167,23 @@
                 Kirby and The Forgotten Land: Alivel Mall
               </div>
               <div id="songArtist">
-                HAL Laboratory
+                
               </div>
             </div>
 
+            <audio src="music/Kirby and the Forgotten Land - Alivel Mall.mp3" id="audio"></audio>
+
             <div class="musicNavigation">
               <button id="prev" class="action-btn">
-                <svg viewBox="0 0 184 190" width="20px">
-                  <defs>
-                    <style>
-                      .smallerIcons {
-                        fill: #272951;
-                      }
-                    </style>
-                  </defs>
-                  <path class="smallerIcons"
-                    d="M 11.19922,0 C 4.99442,0 0,4.99442 0,11.19922 V 178.80078 C 0,185.00558 4.99442,190 11.19922,190 H 26.79883 C 33.00363,190 38,185.00558 38,178.80078 v -73.04297 c 0.15312,0.10822 0.28948,0.22913 0.44922,0.33204 l 126.09961,81.37109 c 8.39,5.41 19.45117,-0.61156 19.45117,-10.60156 V 14.13086 C 184,4.14086 172.93883,-1.8807 164.54883,3.5293 L 38.44922,84.90039 C 38.28959,85.00343 38.15302,85.12409 38,85.23242 V 11.19922 C 38,4.99442 33.00363,0 26.79883,0 Z" />
-                </svg>
+                <i class="fa-solid fa-backward-step"></i>
               </button>
 
               <button id="play" class="action-btn">
-                <svg viewBox="0 0 151.32499 187.99596" width="20px">
-                  <defs>
-                    <style>
-                      .smallerIcons {
-                        fill: #272951;
-                      }
-                    </style>
-                  </defs>
-                  <path class="smallerIcons"
-                    d="m 145.55,104.59298 -126.1,81.37 c -8.39,5.41 -19.45,-0.61 -19.45,-10.6 V 12.632981 C 0,2.6429808 11.06,-3.3770192 19.45,2.0329808 l 126.1,81.3700002 c 7.7,4.97 7.7,16.23 0,21.189999 z" />
-                </svg>
+                <i class="fa-solid fa-play"></i>
               </button>
 
               <button id="next" class="action-btn">
-                <svg viewBox="0 0 184 190" width="20px">
-                  <defs>
-                    <style>
-                      .smallerIcons {
-                        fill: #272951;
-                      }
-                    </style>
-                  </defs>
-                  <path class="smallerIcons"
-                    d="M 157.19922,0 C 150.99442,0 146,4.99637 146,11.20117 v 74.02344 c -0.15373,-0.10889 -0.29075,-0.23045 -0.45117,-0.33399 L 19.44922,3.51953 C 11.05922,-1.89047 0,4.13109 0,14.12109 v 162.72852 c 0,9.99 11.05922,16.01156 19.44922,10.60156 l 126.09961,-81.3711 c 0.16053,-0.1034 0.29734,-0.22521 0.45117,-0.33398 v 73.05469 C 146,185.00558 150.99442,190 157.19922,190 h 15.59961 C 179.00363,190 184,185.00558 184,178.80078 V 11.20117 C 184,4.99637 179.00363,0 172.79883,0 Z" />
-                </svg>
+                <i class="fa-solid fa-forward-step"></i>
 
               </button>
             </div>
@@ -320,7 +291,7 @@
           <button id="active" class="timerBtn">Timer</button>
           <button id="stopwatchBtnInactive" class="stopwatchBtn">Stopwatch</button>
         </div>
-        <div class="pomodoro">25:00</div>
+        <div id="countdownTimerModal" class="pomodoro"></div>
         <button class="cancel-timer">Cancel</button>
         <button class="start-timer">Start</button>
       </div>
@@ -341,15 +312,15 @@
     <!-- Music Modal -->
     <div id="openMusicModal" class="musicModal">
       <div class="currentMusicContent">
-        <img class="modalImg" src="images/Kirby&tFLAM.jpg" width="275px" alt="Kirby Soundtrack Art Cover">
+        <img id="musicModalCover" class="modalImg" src="images/Kirby and the Forgotten Land - Alivel Mall.jpg" width="275px" alt="Kirby Soundtrack Art Cover">
         <div class="progressBarContainer">
           <div class="progressBar"></div>
         </div>
-        <div class="songName">
-          Kirby and The Forgotten Land: Alivel Mall
+        <div id="musicModalTitle" class="songName">
+          
         </div>
-        <div class="songArtist">
-          <b>HAL Laboratory</b>
+        <div id="musicModalArtist" class="songArtist">
+          <b></b>
         </div>
         <div class="iconContainer">
           <button id="loopSong" class="musicModal-actionBtn">
@@ -372,7 +343,7 @@
           <p><b>Playlist</b></p>
           <div class="songPlaylist">
             <div class="playlist-imgContainer">
-              <img width="90px" src="images/YorushikaGiaF.jpg" alt="album cover" id="cover">
+              <img width="90px" src="images/花に亡霊 (Ghost In A Flower).jpg" alt="album cover" id="cover">
             </div>
             <div class="playlistSongDetails">
               <div class="artistDetails">
@@ -388,7 +359,7 @@
 
           <div class="songPlaylist">
             <div class="playlist-imgContainer">
-              <img width="90px" src="images/AdoGiraGira.jpg" alt="album cover" id="cover">
+              <img width="90px" src="images/ギラギラ (Gira Gira).jpg" alt="album cover" id="cover">
             </div>
             <div class="playlistSongDetails">
               <div class="artistDetails">
@@ -404,7 +375,7 @@
 
           <div class="songPlaylist">
             <div class="playlist-imgContainer">
-              <img width="90px" src="images/YoasobiRITN.jpg" alt="album cover" id="cover">
+              <img width="90px" src="images/夜に駆ける (Racing into the Night).jpg" alt="album cover" id="cover">
             </div>
             <div class="playlistSongDetails">
               <div class="artistDetails">

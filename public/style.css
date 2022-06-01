@@ -277,7 +277,10 @@ body {
     height: 50%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+}
+
+.groupModalRightSide {
+    margin-left: 10%;
 }
 
 .taskModalContent {
@@ -501,6 +504,7 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1;
+    
 }
 
 .action-btn {
@@ -509,6 +513,8 @@ body {
     cursor: pointer;
     padding: 7px 13px 0px 13px;
     margin-top: 30px;
+    color: #272951;
+    font-size: 30px;
 }
 
 .artistDetails {
@@ -662,4 +668,13 @@ margin-right: 5%;
     color: white;
     background-color: #DB2F7F;
     border-radius: 100px;
+}
+
+.cardContainers {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card:not(:last-child) {
+    margin-right: 5%;
 }
