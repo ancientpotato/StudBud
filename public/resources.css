@@ -58,3 +58,12 @@
 .card:not(:last-child) {
     margin-right: 5%;
 }
+
+.smallerIcons {
+    font-size: 30px;
+    color: #272951;
+}
+
+.smallerIcons:hover {
+    color: #00A99D;
+}

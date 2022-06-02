@@ -14,26 +14,6 @@ var toDoItems = [];
 var inProgressItems = [];
 var doneItems = [];
 
-
-
-  //Tasks Tab - Adding Column Modal
-  var columnModal = document.getElementById("addColumnModal");
-  var columnBtn = document.getElementById("columnBtn");
-  var columnClose = document.getElementsByClassName("cancel-column")[0];
-
-  if(columnBtn) {
-    columnBtn.onclick = function() {
-        columnModal.style.display = "block";
-    }
-  }
-
-  if(columnClose) {
-    columnClose.onclick = function() {
-        columnModal.style.display = "none";
-    }
-  
-  }
-
   function getKanBanData() {
 
     // Hides the modal once user clicks save
@@ -125,3 +105,21 @@ function kanBanTemplate(kanBan) {
     </div>
   </div>`
 }
+
+  //Tasks Tab - Adding Column Modal
+  var columnModal = document.getElementById("addColumnModal");
+  var columnBtn = document.getElementById("columnBtn");
+  var columnClose = document.getElementsByClassName("cancel-column")[0];
+
+  if(columnBtn) {
+    columnBtn.onclick = function() {
+        columnModal.style.display = "block";
+    }
+  }
+
+  if(columnClose) {
+    columnClose.onclick = function() {
+        columnModal.style.display = "none";
+    }
+  
+  }
