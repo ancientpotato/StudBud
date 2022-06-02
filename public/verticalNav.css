@@ -1,0 +1,44 @@
+* {
+    font-family: 'Nunito';
+}
+
+.sideNavContainer {
+    text-align: center;
+    width: 120px;
+    height: auto;
+
+    text-decoration: none;
+
+}
+
+.itemName {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.navTimer,
+.navMusic,
+.navPodcast {
+    background-color: white;
+    border-style: none;
+    color: #272951;
+}
+
+.navTimer:hover,
+.navMusic:hover,
+.navPodcast:hover {
+    cursor: pointer;
+    color: #00A99D;
+}
+
+.navItem:hover,
+.icon:hover {
+    color: #00A99D;
+    fill: #00A99D;
+
+}
+
+.navItem {
+    text-decoration: none;
+    color: #272951;
+}

@@ -1,0 +1,60 @@
+.card {
+    background-color: white;
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 10px 10px 10px #E8EDF6;
+    margin-left: 20px;
+}
+
+.smallerIcons:hover {
+    fill: #00A99D;
+    cursor: pointer;
+
+}
+
+.groupTitle {
+    font-size: 35px;
+    font-weight: bolder;
+    color: #272951;
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardDescription,
+.expandButton {
+    text-align: center;
+}
+
+.cardDescription {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 210px;
+}
+
+.expandButton button {
+    background-color: #00A99D;
+    border-style: none;
+    border-radius: 8px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.cardContainers {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card:not(:last-child) {
+    margin-right: 5%;
+}

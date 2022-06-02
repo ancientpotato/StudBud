@@ -1,0 +1,59 @@
+* {
+    font-family: 'Nunito';
+}
+
+.audioPlayer {
+    background-color: white;
+    display: flex;
+}
+
+
+.musicNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    
+}
+
+.action-btn {
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
+    padding: 7px 13px 0px 13px;
+    margin-top: 30px;
+    color: #272951;
+    font-size: 30px;
+}
+
+.action-btn:hover {
+    color: #00A99D;
+}
+
+.artistDetails {
+    color: #272951;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+
+
+.progressContainer {
+    background-color: #DFDFDF;
+    width: 96%;
+    height: 10px;
+    margin-left: 6px;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+.progressBar {
+    background-color: #00A99D;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.musicTop {
+    display: flex;
+}

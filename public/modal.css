@@ -1,0 +1,327 @@
+* {
+    font-family: 'Nunito';
+}
+
+
+.addGroup,
+.addColumn {
+    background-color: #00A99D;
+    border-style: none;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 20px;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.groupModal,
+.columnModal,
+.timerModal,
+.taskModal {
+    display: none;
+    margin: auto;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.stopwatchModal {
+    display: none;
+    margin: auto;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.musicModal,
+.podcastModal {
+    display: none;
+    margin: auto;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.currentMusicContent,
+.currentPodcastContent {
+    background-color: white;
+    width: 25%;
+    height: 100%;
+    margin-left: .5%;
+    margin-top: .5%;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.modalImg {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 15px;
+}
+
+.progressBarContainer {
+    background-color: #DFDFDF;
+    width: 80%;
+    height: 1%;
+    margin-left: 10%;
+}
+
+.musicModal-actionBtn,
+.podcastModal-actionBtn {
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 30px;
+    color: #272951;
+    padding: 2% 5% 0% 5%;
+}
+
+.songPlaylist,
+.podcastPlaylist {
+    display: flex;
+    margin-bottom: 4%;
+}
+
+.playlistContainter {
+    text-align: left;
+    margin-left: 3%;
+}
+
+
+.addGroupModalContent {
+    background-color: white;
+    border-radius: 30px;
+    width: 40%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+}
+
+.groupModalRightSide {
+    margin-left: 10%;
+}
+
+.taskModalContent {
+    background-color: white;
+    border-radius: 30px;
+    width: 45%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    
+}
+
+.taskModalRight {
+    margin-left: 10%;
+}
+
+.taskUserInputTitle::placeholder,
+.taskUserInputDescription::placeholder,
+.taskUserInputDueDate::placeholder {
+    color: #888A9F;
+    font-weight: initial;
+}
+
+.addColumnModalContent {
+    background-color: white;
+    width: 25%;
+    border-radius: 30px;
+    height: 35%;
+    margin: auto;
+    text-align: center;
+}
+
+.timerContent,
+.stopwatchModal {
+    background-color: white;
+    border-radius: 30px;
+    margin: auto;
+    text-align: center;
+    width: 30%;
+    height: 40%;
+}
+
+.timerBtn,
+.stopwatchBtn {
+    border-radius: 5px;
+    border-style: none;
+    background-color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 5% 7% 5% 7%;
+}
+
+#active {
+    color: #00A99D;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+}
+
+.pomodoro,
+.stopwatch {
+    font-size: 50px;
+    font-weight: bolder;
+    color: #272951;
+    margin: 5%;
+}
+
+.addColumnModalContent h1,
+.taskModalContent h1 {
+    font-weight: bolder;
+    color: #272951;
+    padding-top: 30px;
+}
+
+.inputColumnName {
+    padding: 2% 20%;
+}
+
+.inputColumnName::placeholder {
+    opacity: 50%;
+}
+
+.cancel-column,
+.save-Column,
+.cancel-timer,
+.start-timer,
+.cancel-stopwatch,
+.start-stopwatch,
+.save-task,
+.cancel-task {
+    font-size: 25px;
+    font-weight: bolder;
+    border-radius: 5px;
+    border-style: none;
+    padding: 6px 30px 6px 30px;
+}
+
+.cancel-column,
+.save-Column {
+    margin: 10%;
+}
+
+.cancel-timer,
+.start-timer,
+.cancel-stopwatch,
+.start-stopwatch {
+    margin: 4%
+}
+
+.cancel-column,
+.cancel-timer,
+.cancel-stopwatch,
+.cancel-task {
+    color: #272951;
+    background-color: #E8EDF6;
+}
+
+.cancel-column:hover,
+.save-Column:hover {
+    cursor: pointer;
+}
+
+.save-Column,
+.start-timer,
+.start-stopwatch,
+.save-task {
+    color: white;
+    background-color: #00A99D;
+}
+
+.addGroupModalContent h1,
+.taskModalContent h1 {
+    padding: 15px 15px 0px 15px;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-left: 20px;
+    color: #272951;
+}
+
+.modalSubheading {
+    color: #888A9F;
+    font-size: 20px;
+    margin-left: 35px;
+ 
+}
+
+.groupUserInputTitle,
+.groupUserInputDescription,
+.taskUserInputTitle,
+.taskUserInputDescription,
+.taskUserInputDueDate,
+.addTaskRadio:nth-last-child(2),
+.estTimeContainer {
+    border-radius: 5px;
+    width: 100%;
+    margin-left: 35px;
+    border-color: #272951;
+    font-size: 20px;
+}
+
+.taskPriorityRadioButtons input[type="radio"],
+.taskStatusRadioButtons input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+
+}
+
+.taskPriorityRadioButtons label,
+.taskStatusRadioButtons label {
+    background-color: white;
+    padding: 5px 15px;
+    font-size: 20px;
+    border: 2px solid #272951;
+    border-radius: 4px;
+
+}
+
+
+.taskPriorityRadioButtons label:hover,
+.taskStatusRadioButtons label:hover {
+    background-color: #272951;
+    color: white;
+}
+
+.taskPriorityRadioButtons input[type="radio"]:checked+label,
+.taskStatusRadioButtons input[type="radio"]:checked+label {
+    background-color: #272951;
+    color: white;
+}
+
+.taskPriorityRadioButtons, .taskStatusRadioButtons {
+    margin-left: 35px;
+    margin-top: 2%;
+}
+
+.taskUserInputTime {
+    width: 70px;
+    height: 50px;
+    border-radius: 7px;
+    
+}
+
+.cancel-task, .save-task {
+    margin-top: 20%;
+    margin-left: 35px;
+    
+}
+
+.groupUserInputDescription {
+    height: 20%;
+}

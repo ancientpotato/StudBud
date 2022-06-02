@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="topNavBar.css">
+  <link rel="stylesheet" href="musicNav.css">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="verticalNav.css">
+  <link rel="stylesheet" href="resources.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,6 +23,9 @@
   <div class="sideNavContainer">
     <img width="100" src="images/studbug logo.png" alt="StudBud Logo">
 
+
+    <!-- I created my own icons and saved them as SVG files so I can manipulate the colours to what I'd like -->
+    <!-- I wrapped both the icon and name under the a element so both the icon and name are clickable -->
     <a class="navItem" href="index.html">
       <div class="icon">
         <svg viewBox="0 0 308.31179 426.0197" version="1.1" sodipodi:docname="task.svg" width="70"
@@ -40,7 +48,7 @@
       </div>
     </a>
 
-    <a class="navItem" href="">
+    <a class="navItem" href="resources.html">
       <div class="icon">
         <svg viewBox="0 0 351.75365 440.02385" version="1.1" sodipodi:docname="resource.svg" width="70"
           inkscape:version="1.1.2 (b8e25be833, 2022-02-05)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -62,7 +70,7 @@
       </div>
     </a>
 
-    <a class="navItem" href="">
+    <button id="timer" class="navTimer">
       <div class="icon">
         <svg viewBox="0 0 374.00445 416.88878" version="1.1" sodipodi:docname="timer.svg" width="70"
           inkscape:version="1.1.2 (b8e25be833, 2022-02-05)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -83,9 +91,9 @@
       <div class="itemName">
         Timer
       </div>
-    </a>
+    </button>
 
-    <a class="navItem" href="">
+    <button id="music" class="navMusic">
       <div class="icon">
 
         <svg viewBox="0 0 371.86809 461.28658" version="1.1" sodipodi:docname="music.svg" width="70"
@@ -108,9 +116,9 @@
       <div class="itemName">
         Music
       </div>
-    </a>
+    </button>
 
-    <a class="navItem" href="">
+    <button id="podcast" class="navPodcast">
       <div class="icon">
 
 
@@ -133,7 +141,7 @@
       <div class="itemName">
         Podcast
       </div>
-    </a>
+    </button>
 
   </div>
 
@@ -141,15 +149,14 @@
   <div class="rightColumn">
     <div class="topNavBar">
       <div class="searchDiv">
-        <input class="searchBar" type="text" placeholder="Search for task..." name="search">
+        <input class="searchBar" type="text" placeholder="Search for resource..." name="search">
       </div>
 
       <div class="countdown">
         <img width="40px" height="45px" src="images/timer.png">
-        <div class="counterNum">
-          4:27
+        <div id="countdownTimer" class="counterNum">
         </div>
-        <div class="counterMode">
+        <div id="timerStatus" class="counterMode">
           Focus Mode
         </div>
 
@@ -157,7 +164,7 @@
 
       <div class="audioPlayer">
         <div class="imgContainer">
-          <img width="90px" src="images/Kirby&tFLAM.jpg" alt="album cover" id="cover">
+          <img width="90px" src="images/Kirby and the Forgotten Land - Alivel Mall.jpg" alt="album cover" id="cover">
         </div>
         <div class="songDetails">
           <div class="musicTop">
@@ -166,51 +173,23 @@
                 Kirby and The Forgotten Land: Alivel Mall
               </div>
               <div id="songArtist">
-                HAL Laboratory
+                
               </div>
             </div>
 
+            <audio src="music/Kirby and the Forgotten Land - Alivel Mall.mp3" id="audio"></audio>
+
             <div class="musicNavigation">
               <button id="prev" class="action-btn">
-                <svg viewBox="0 0 184 190" width="20px">
-                  <defs>
-                    <style>
-                      .smallerIcons {
-                        fill: #272951;
-                      }
-                    </style>
-                  </defs>
-                  <path class="smallerIcons"
-                    d="M 11.19922,0 C 4.99442,0 0,4.99442 0,11.19922 V 178.80078 C 0,185.00558 4.99442,190 11.19922,190 H 26.79883 C 33.00363,190 38,185.00558 38,178.80078 v -73.04297 c 0.15312,0.10822 0.28948,0.22913 0.44922,0.33204 l 126.09961,81.37109 c 8.39,5.41 19.45117,-0.61156 19.45117,-10.60156 V 14.13086 C 184,4.14086 172.93883,-1.8807 164.54883,3.5293 L 38.44922,84.90039 C 38.28959,85.00343 38.15302,85.12409 38,85.23242 V 11.19922 C 38,4.99442 33.00363,0 26.79883,0 Z" />
-                </svg>
+                <i class="fa-solid fa-backward-step"></i>
               </button>
 
               <button id="play" class="action-btn">
-                <svg viewBox="0 0 151.32499 187.99596" width="20px">
-                  <defs>
-                    <style>
-                      .smallerIcons {
-                        fill: #272951;
-                      }
-                    </style>
-                  </defs>
-                  <path class="smallerIcons"
-                    d="m 145.55,104.59298 -126.1,81.37 c -8.39,5.41 -19.45,-0.61 -19.45,-10.6 V 12.632981 C 0,2.6429808 11.06,-3.3770192 19.45,2.0329808 l 126.1,81.3700002 c 7.7,4.97 7.7,16.23 0,21.189999 z" />
-                </svg>
+                <i class="fa-solid fa-play"></i>
               </button>
 
               <button id="next" class="action-btn">
-                <svg viewBox="0 0 184 190" width="20px">
-                  <defs>
-                    <style>
-                      .smallerIcons {
-                        fill: #272951;
-                      }
-                    </style>
-                  </defs>
-                  <path class="smallerIcons"
-                    d="M 157.19922,0 C 150.99442,0 146,4.99637 146,11.20117 v 74.02344 c -0.15373,-0.10889 -0.29075,-0.23045 -0.45117,-0.33399 L 19.44922,3.51953 C 11.05922,-1.89047 0,4.13109 0,14.12109 v 162.72852 c 0,9.99 11.05922,16.01156 19.44922,10.60156 l 126.09961,-81.3711 c 0.16053,-0.1034 0.29734,-0.22521 0.45117,-0.33398 v 73.05469 C 146,185.00558 150.99442,190 157.19922,190 h 15.59961 C 179.00363,190 184,185.00558 184,178.80078 V 11.20117 C 184,4.99637 179.00363,0 172.79883,0 Z" />
-                </svg>
+                <i class="fa-solid fa-forward-step"></i>
 
               </button>
             </div>
@@ -219,10 +198,209 @@
             <div class="progressBar">
             </div>
           </div>
+        </div>
+      </div>
 
+      <!-- Timer/Stopwatch Modal -->
+    <div id="openTimerModal" class="timerModal">
+      <div class="timerContent">
+        <div class="timerStopwatchBtn">
+          <button id="active" class="timerBtn">Timer</button>
+          <button id="stopwatchBtnInactive" class="stopwatchBtn">Stopwatch</button>
+        </div>
+        <div id="countdownTimerModal" class="pomodoro"></div>
+        <button class="cancel-timer">Cancel</button>
+        <button class="start-timer">Start</button>
+      </div>
+    </div>
+
+    <div id="openStopwatchModal" class="stopwatchModal">
+      <div class="stopwatchContent">
+        <div class="timerStopwatchBtn">
+          <button id="timerBtnInactive" class="timerBtn">Timer</button>
+          <button id="active" class="stopwatchBtn">Stopwatch</button>
+        </div>
+        <div class="stopwatch">00:00.00</div>
+        <button class="cancel-stopwatch">Cancel</button>
+        <button class="start-stopwatch">Start</button>
+      </div>
+    </div>
+
+    <!-- Music Modal -->
+    <div id="openMusicModal" class="musicModal">
+      <div class="currentMusicContent">
+        <img id="musicModalCover" class="modalImg" src="images/Kirby and the Forgotten Land - Alivel Mall.jpg" width="275px" alt="Kirby Soundtrack Art Cover">
+        <div class="progressBarContainer">
+          <div class="progressBar"></div>
+        </div>
+        <div id="musicModalTitle" class="songName">
+          
+        </div>
+        <div id="musicModalArtist" class="songArtist">
+          <b></b>
+        </div>
+        <div class="iconContainer">
+          <button id="loopSong" class="musicModal-actionBtn">
+            <i class="fa-solid fa-repeat"></i>
+          </button>
+          <button id="prev" class="musicModal-actionBtn">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+          <button id="play" class="musicModal-actionBtn">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button id="next" class="musicModal-actionBtn">
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
+          <button id="shuffle" class="musicModal-actionBtn">
+            <i class="fa-solid fa-shuffle"></i>
+          </button>
+        </div>
+        <div class="playlistContainter">
+          <p><b>Playlist</b></p>
+          <div class="songPlaylist">
+            <div class="playlist-imgContainer">
+              <img width="90px" src="images/花に亡霊 (Ghost In A Flower).jpg" alt="album cover" id="cover">
+            </div>
+            <div class="playlistSongDetails">
+              <div class="artistDetails">
+                <div id="songTitle">
+                  Ghost In a Flower
+                </div>
+                <div id="songArtist">
+                  <b>Yorushika</b>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="songPlaylist">
+            <div class="playlist-imgContainer">
+              <img width="90px" src="images/ギラギラ (Gira Gira).jpg" alt="album cover" id="cover">
+            </div>
+            <div class="playlistSongDetails">
+              <div class="artistDetails">
+                <div id="songTitle">
+                  Gira Gira
+                </div>
+                <div id="songArtist">
+                  <b>Ado</b>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="songPlaylist">
+            <div class="playlist-imgContainer">
+              <img width="90px" src="images/夜に駆ける (Racing into the Night).jpg" alt="album cover" id="cover">
+            </div>
+            <div class="playlistSongDetails">
+              <div class="artistDetails">
+                <div id="songTitle">
+                  夜に駆ける (Racing into the Night)
+                </div>
+                <div id="songArtist">
+                  <b>Yoasobi</b>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
+      <div class="playlistContent">
+
+      </div>
+    </div>
+
+
+    <!-- Podcast Modal -->
+    <div id="openPodcastModal" class="podcastModal">
+      <div class="currentPodcastContent">
+        <img class="modalImg" src="images/NihongoConTeppei.png" width="275px" alt="Nihongo Con Teppei Podcast Cover">
+        <div class="progressBarContainer">
+          <div class="progressBar"></div>
+        </div>
+        <div class="podcastName">
+          『元気ですか？について！』
+        </div>
+        <div class="podcastArtist">
+          <b>Teppei</b>
+        </div>
+        <div class="iconContainer">
+          <button id="rewind" class="podcastModal-actionBtn">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+          </button>
+          <button id="prev" class="podcastModal-actionBtn">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+          <button id="play" class="podcastModal-actionBtn">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button id="next" class="podcastModal-actionBtn">
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
+          <button id="forward" class="podcastModal-actionBtn">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
+        </div>
+        <div class="playlistContainter">
+          <p><b>Playlist</b></p>
+          <div class="podcastPlaylist">
+            <div class="playlist-imgContainer">
+              <img width="90px" src="images/LTiJ.jpg" alt="album cover" id="cover">
+            </div>
+            <div class="playlistPodcastDetails">
+              <div class="artistDetails">
+                <div id="podcastTitle">
+                  episode 002 「ひまつぶし(N3)」
+                </div>
+                <div id="podcastArtist">
+                  <b>Let's Talk in Japanese!</b>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="podcastPlaylist">
+            <div class="playlist-imgContainer">
+              <img width="90px" src="images/NihongoNoTane.jpg" alt="album cover" id="cover">
+            </div>
+            <div class="playlistPodcastDetails">
+              <div class="podcastDetails">
+                <div id="podcastTitle">
+                  Nihongo no Tane 2: 好きな動物 - Animals that You Like
+                </div>
+                <div id="podcastArtist">
+                  <b>Nihongo no Tane with Yumi</b>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="podcastPlaylist">
+            <div class="playlist-imgContainer">
+              <img width="90px" src="images/JapaneseWithNoriko.jpg" alt="album cover" id="cover">
+            </div>
+            <div class="podcastSongDetails">
+              <div class="podcastDetails">
+                <div id="podcastTitle">
+                  92. Netflixを利用する人が減っている
+                </div>
+                <div id="podcastArtist">
+                  <b>Noriko</b>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="playlistContent">
+
+      </div>
+    </div>
+
     </div>
     <div id="addGroupModal" class="groupModal">
       <div class="addGroupModalContent">
@@ -231,7 +409,7 @@
 
           <label class="modalSubheading" for="group-title"><b>Title</b></label>
           <br>
-          <input class="groupUserInputTitle" type="text" placeholder="Name of Group" name="group-title" required>
+          <input id="group-title" class="groupUserInputTitle" type="text" placeholder="Name of Group" name="group-title" required>
           <br><br>
           <label class="modalSubheading" for="group-description"><b>Description</b></label>
           <br>
@@ -244,22 +422,22 @@
             <label class="modalSubheading" for="upload-image"><b>Image</b></label>
             <i class="fa-solid fa-upload"></i>
             <div class="selectFile">       
-              <label for="file">Upload an image for your group</label>                   
-              <input type="file" name="files[]" id="file">
+              <label for="groupImg">Upload an image for your group</label>                   
+              <input type="file" id="groupImg">
             </div>
           </div>
-          <button type="button" class="cancel-group">Cancel</button>
-          <button type="submit" class="save-group">Save</button>
+          <button type="button" onclick="closeGroupModal()" class="cancel-group">Cancel</button>
+          <button type="submit" onclick="getGroupData()" class="save-group">Save</button>
         </div>
       </div>
     </div>
 
     <div class="resourceContent">
       <h2>Resource List<h2>
-          <button id="groupBtn" class="addGroup">+ add group</button>
+          <button id="groupBtn" onclick="openGroupModal()" class="addGroup">+ add group</button>
     </div>
     <div class="cardContainers">
-      <div class="card">
+      <div id="groupCard" class="card">
         <div class="cardTop">
           <div class="smallerIcons">
             <svg viewBox="0 0 265.09646 262.16958" version="1.1" sodipodi:docname="open all.svg" width="30px"
@@ -330,6 +508,8 @@
   </div>
 </body>
 
-<script src="script.js"></script>
-
+<script src="modals.js"></script>
+<script src="groupModalTest.js"></script>
+<script src="resourcesMusicNav.js"></script>
+<script src="timer.js"></script>
 </html>

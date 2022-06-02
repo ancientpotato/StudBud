@@ -1,0 +1,51 @@
+* {
+    font-family: 'Nunito';
+}
+
+
+.topNavBar {
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+.searchDiv,
+.countdown {
+    margin: auto;
+}
+
+.countdown {
+    display: flex;
+    background-color: white;
+    width: 30%;
+}
+
+
+.searchBar {
+    border-radius: 8px;
+    border-color: #272951;
+    width: 500px;
+    height: 50px;
+}
+
+::placeholder {
+    color: #272951;
+    font-size: 18px;
+    padding-left: 20px;
+    font-weight: bolder;
+}
+
+.counterNum {
+    font-weight: bolder;
+    font-size: 25px;
+    color: #272951;
+}
+
+.counterMode {
+    color: #00A99D;
+    font-weight: bolder;
+    font-size: 40px;
+}

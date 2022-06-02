@@ -1,0 +1,120 @@
+* {
+    font-family: 'Nunito';
+}
+
+.kanbanAddTask {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #00A99D;
+    border-style: dashed;
+    border-color: #00A99D;
+    border-radius: 7px;
+    background-color: white;
+    padding: 1% 175px;
+    cursor: pointer;
+    border-width: 2px;
+}
+
+.kanbanAddTask:hover {
+    color: white;
+    background-color: #00A99D;
+}
+
+.kanbanColumnDescription {
+    border-style: solid;
+    padding: 10px;
+    margin-top: 2%;
+    border-radius: 7px;
+    border-color: #272951;
+    border-width: 2px;
+    background-color: white;
+}
+
+.kanbanTaskTitle {
+    color: #272951;
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+
+.kanbanTaskDescription {
+    color: #888A9F;
+
+}
+
+.lineSeparation {
+    width: 100%;
+    height: 1px;
+    background-color: #272951;
+    margin: 2% 0;
+}
+
+.kanbanNumericalItems {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dueDateIcon {
+    display: flex;
+}
+
+.fa-calendar {
+    font-size: 20px;
+    color: #272951;
+}
+
+.kanbanNumericalItems {
+    color: #888A9F;
+    font-weight: bolder;
+}
+
+.fa-pen {
+    font-size: 25px;
+    color: #272951;
+}
+
+.taskTopRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+
+.priority {
+    padding: 5px 10px;
+    color: white;
+    background-color: #DB2F7F;
+    border-radius: 100px;
+}
+
+.imgContainer {
+    margin: auto;
+    display: flex;
+}
+
+.kanban {
+    display: flex;
+    padding: 30px;
+}
+
+.kanbanColumn {
+    flex: 1;
+}
+
+.kanbanSpace:not(:last-child) {
+margin-right: 5%;
+}
+
+.kanbanColumnTitle {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #272951;
+}
+
+.kanbanColumn {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px #E8EDF6;
+    cursor: pointer;
+}

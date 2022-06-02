@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="kanban.css">
+  <link rel="stylesheet" href="topNavBar.css">
+  <link rel="stylesheet" href="musicNav.css">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="verticalNav.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -158,7 +163,7 @@
 
       <div class="audioPlayer">
         <div class="imgContainer">
-          <img width="90px" src="images/Kirby&tFLAM.jpg" alt="album cover" id="cover">
+          <img width="90px" src="images/Kirby and the Forgotten Land - Alivel Mall.jpg" alt="album cover" id="cover">
         </div>
         <div class="songDetails">
           <div class="musicTop">
@@ -273,7 +278,7 @@
           </div>
 
           <div class="addTaskModalBtn">
-            <button onclick="closeModal()" type="button" class="cancel-task">Cancel</button>
+            <button onclick="closeTaskModal()" type="button" class="cancel-task">Cancel</button>
             <button onclick="getKanBanData()" type="submit" class="save-task">Save</button>
           </div>
 
@@ -495,8 +500,8 @@
           TO DO
         </div>
         <div id="kanBanToDo" class="kanbanColumn">
-          <button id="taskBtn" onclick="openModal()" class="kanbanAddTask" type="button">+ add task</button>
-          <div class="kanbanDrop"></div>
+          <button id="taskBtn" onclick="openTaskModal()" class="kanbanAddTask" type="button">+ add task</button>
+  
         </div>
       </div>
 
@@ -505,8 +510,8 @@
           IN PROGRESS
         </div>
         <div id="kanBanInProgress" class="kanbanColumn">
-          <button id="taskBtn" onclick="openModal()" class="kanbanAddTask" type="button">+ add task</button>
-          <div class="kanbanDrop"></div>
+          <button id="taskBtn" onclick="openTaskModal()" class="kanbanAddTask" type="button">+ add task</button>
+
         </div>
       </div>
 
@@ -515,9 +520,9 @@
           DONE
         </div>
         <div id="kanBanDone" class="kanbanColumn">
-          <button id="taskBtn" onclick="openModal()" class="kanbanAddTask" type="button">+ add task</button>
+          <button id="taskBtn" onclick="openTaskModal()" class="kanbanAddTask" type="button">+ add task</button>
          
-          <div class="kanbanDrop"></div>
+
         </div>
       </div>
 
@@ -530,7 +535,12 @@
 
 
 
-  <script src="script.js"></script>
+  <script src="modals.js"></script>
+  <script src="tasksMusicNavTest.js"></script>
+  <script src="kanban.js"></script>
+  <script src="timer.js"></script>
+
+  
 </body>
 
 </html>
