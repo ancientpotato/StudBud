@@ -1,11 +1,13 @@
 .card {
     background-color: white;
-    width: 400px;
+    /* width: 400px; */
+    width: 100%;
     height: 600px;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 10px 10px 10px #E8EDF6;
     margin-left: 20px;
+    display: flex;
 }
 
 .smallerIcons:hover {
@@ -28,6 +30,8 @@
 .cardDescription,
 .expandButton {
     text-align: center;
+    color: #272951;
+    padding: 0 10px 20px 10px;
 }
 
 .cardDescription {
@@ -66,4 +70,53 @@
 
 .smallerIcons:hover {
     color: #00A99D;
+}
+
+.expandedArea {
+    margin-left: 2%;
+}
+
+.resources {
+    width: 130vh;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 7px;
+    border-color: #272951;
+    border-width: 2px;
+}
+
+.resourceTopRow,
+.resourceBottomRow {
+    display: flex;
+}
+
+.resourceBottomRow {
+    padding-top: 1%;
+}
+
+.resourceTitle {
+    font-weight: bolder;
+    font-size: 25px;
+    margin-right: 1%;
+    color: #272951;
+    cursor: pointer;
+}
+
+.editIcon, 
+.fa-link {
+    font-size: 18px;
+    color: #272951;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.resourceDescription {
+    color: #888A9F;
+    font-size: 15px;
+}
+
+.resourceLink {
+    color: #272951;
+    cursor: pointer;
+    font-weight: bolder;
 }

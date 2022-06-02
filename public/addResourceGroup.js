@@ -40,13 +40,15 @@ function getGroupData() {
     card.insertAdjacentHTML('beforeend', grouphtml);
 
     function resourceGroupTemplate(resourceGroup) {
-        return `<div class="card">
+ 
+      return `<div class="card">
+      <div class="cardContent">
         <div class="cardTop">
           <div class="smallerIcons">
             <i class="fa-solid fa-up-right-from-square"></i>
           </div>
           <div class="groupTitle">
-            ${resourceGroup.TaskTitle}
+          ${resourceGroup.TaskTitle}
           </div>
           <div class="smallerIcons">
             <i class="fa-solid fa-pen"></i>
@@ -65,8 +67,10 @@ function getGroupData() {
         </div>
 
         <div class="expandButton">
-          <button>View More</button>
+          <button type="button" class="viewMore">View More</button>
         </div>
-      </div>`
+      </div>
+      <div class="expandedArea">hello</div>
+    </div>`
     }
 }
