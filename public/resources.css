@@ -1,13 +1,13 @@
 .card {
     background-color: white;
-    /* width: 400px; */
-    width: 100%;
+    width: 400px;
     height: 600px;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 10px 10px 10px #E8EDF6;
     margin-left: 20px;
     display: flex;
+    
 }
 
 .smallerIcons:hover {
@@ -74,7 +74,9 @@
 
 .expandedArea {
     margin-left: 2%;
+    display: none;
 }
+
 
 .resources {
     width: 130vh;

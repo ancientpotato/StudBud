@@ -154,10 +154,10 @@
 
       <div class="countdown">
         <img width="40px" height="45px" src="images/timer.png">
-        <div id="countdownTimer" class="counterNum">
+        <div id="stopwatchCounter" class="stopwatchCounter">
         </div>
-        <div id="timerStatus" class="counterMode">
-          Focus Mode
+        <div id="countdownTimer" class="counterNum">
+          NO TIMER SET
         </div>
 
       </div>
@@ -208,9 +208,9 @@
             <button id="active" class="timerBtn">Timer</button>
             <button id="stopwatchBtnInactive" class="stopwatchBtn">Stopwatch</button>
           </div>
-          <div id="countdownTimerModal" class="pomodoro"></div>
-          <button class="cancel-timer">Cancel</button>
-          <button class="start-timer">Start</button>
+          <div id="countdownTimerModal" class="pomodoro">25:00</div>
+          <button class="cancel-timer">Exit</button>
+          <button id="timerBtn" onclick="startTimer()" class="start-timer">Start</button>
         </div>
       </div>
 
@@ -220,9 +220,9 @@
             <button id="timerBtnInactive" class="timerBtn">Timer</button>
             <button id="active" class="stopwatchBtn">Stopwatch</button>
           </div>
-          <div class="stopwatch">00:00.00</div>
+          <div id="stopwatchTimer" class="stopwatch">00:00.00</div>
           <button class="cancel-stopwatch">Cancel</button>
-          <button class="start-stopwatch">Start</button>
+          <button id="startStopwatch" class="start-stopwatch">Start</button>
         </div>
       </div>
 
@@ -430,59 +430,61 @@
           <button id="groupBtn" onclick="openGroupModal()" class="addGroup">+ add group</button>
     </div>
     <div id="groupCard" class="cardContainers">
-      <div class="card">
-        <div class="cardContent">
-          <div class="cardTop">
-            <div class="smallerIcons">
-              <i class="fa-solid fa-up-right-from-square"></i>
+     
+        <div class="card">
+          <div class="cardContent">
+            <div class="cardTop">
+              <div class="smallerIcons">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </div>
+              <div class="groupTitle">
+                Lorem ipsum
+              </div>
+              <div class="smallerIcons">
+                <i class="fa-solid fa-pen"></i>
+              </div>
             </div>
-            <div class="groupTitle">
-              Test
+  
+            <div class="cardImg">
+              <img width="400px" height="250px"
+                src="https://images.unsplash.com/photo-1546638008-efbe0b62c730?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
             </div>
-            <div class="smallerIcons">
-              <i class="fa-solid fa-pen"></i>
+  
+            <div class="cardDescription">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.
+  
+              </p>
+            </div>
+  
+            <div class="expandButton">
+              <button type="button" onclick="viewResourceLinks()" class="viewMore">View More</button>
             </div>
           </div>
-
-          <div class="cardImg">
-            <img width="400px" height="250px"
-              src="https://images.unsplash.com/photo-1546638008-efbe0b62c730?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
-          </div>
-
-          <div class="cardDescription">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
-
-            </p>
-          </div>
-
-          <div class="expandButton">
-            <button type="button" class="viewMore">View More</button>
+          <div class="expandedArea">
+            <div class="resources">
+              <div class="resourceTopRow">
+                <div class="resourceTitle">Lorem ipsum</div>
+                <i class="fa-solid fa-pen editIcon"></i>
+              </div>
+              <div class="resourceDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.</div>
+              <div class="resourceBottomRow">
+                <i class="fa-solid fa-link"></i>
+                <div class="resourceLink">https://www.youtube.com/</div>
+              </div>
+            </div>
+            
+  
           </div>
         </div>
-        <div class="expandedArea">
-          <div class="resources">
-            <div class="resourceTopRow">
-              <div class="resourceTitle">Lorem ipsum</div>
-              <i class="fa-solid fa-pen editIcon"></i>
-            </div>
-            <div class="resourceDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.</div>
-            <div class="resourceBottomRow">
-              <i class="fa-solid fa-link"></i>
-              <div class="resourceLink">https://www.youtube.com/</div>
-            </div>
-          </div>
-          
-
-        </div>
-      </div>
+      
     </div>
 
 

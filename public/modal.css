@@ -202,7 +202,9 @@
 .cancel-stopwatch,
 .start-stopwatch,
 .save-task,
-.cancel-task {
+.cancel-task,
+.cancel-group,
+.save-group {
     font-size: 25px;
     font-weight: bolder;
     border-radius: 5px;
@@ -238,7 +240,8 @@
 .save-Column,
 .start-timer,
 .start-stopwatch,
-.save-task {
+.save-task,
+.save-group {
     color: white;
     background-color: #00A99D;
 }
@@ -324,4 +327,8 @@
 
 .groupUserInputDescription {
     height: 20%;
+}
+
+button:hover {
+    cursor: pointer;
 }
