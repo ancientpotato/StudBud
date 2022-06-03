@@ -1,5 +1,6 @@
 # StudBud Markdown
-
+## **IMPORTANT NOTE**
+**If you are having trouble with loading the web app, throughout development, I was running my code on a live server by going to a HTML file, right clicking the code and chose the "Open with Live Server" from the dropdown. So please run a live server from VS code if you come across any issues running the page!**
 
 ## **Contents**
 1. Recap of my Design Brief
