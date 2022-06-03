@@ -1,5 +1,6 @@
 * {
     font-family: 'Nunito';
+    user-select: none;
 }
 
 .kanbanAddTask {
@@ -14,6 +15,7 @@
     padding: 1% 175px;
     cursor: pointer;
     border-width: 2px;
+    user-select: none;
 }
 
 .kanbanAddTask:hover {
@@ -109,6 +111,7 @@ margin-right: 5%;
     font-size: 30px;
     font-weight: bolder;
     color: #272951;
+    user-select: none;
 }
 
 .kanbanColumn {
@@ -117,4 +120,10 @@ margin-right: 5%;
     border-radius: 15px;
     box-shadow: 10px 10px 10px #E8EDF6;
     cursor: pointer;
+    
+}
+
+.addColumn:hover {
+    color: white;
+    background-color: #272951;
 }

@@ -154,10 +154,9 @@
       <div class="countdown">
         <img width="40px" height="45px" src="images/timer.png">
         <div id="countdownTimer" class="counterNum">
+          NO TIMER SET
         </div>
-        <div id="timerStatus" class="counterMode">
-          Focus Mode
-        </div>
+      
 
       </div>
 
@@ -296,9 +295,9 @@
           <button id="active" class="timerBtn">Timer</button>
           <button id="stopwatchBtnInactive" class="stopwatchBtn">Stopwatch</button>
         </div>
-        <div id="countdownTimerModal" class="pomodoro"></div>
-        <button class="cancel-timer">Cancel</button>
-        <button class="start-timer">Start</button>
+        <div id="countdownTimerModal" class="pomodoro">25:00</div>
+        <button class="cancel-timer">Exit</button>
+        <button id="timerBtn" onclick="startTimer()" class="start-timer">Start</button>
       </div>
     </div>
 

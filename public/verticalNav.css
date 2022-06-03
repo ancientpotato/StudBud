@@ -6,7 +6,7 @@
     text-align: center;
     width: 120px;
     height: auto;
-
+    user-select: none;
     text-decoration: none;
 
 }

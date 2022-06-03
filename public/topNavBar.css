@@ -1,5 +1,6 @@
 * {
     font-family: 'Nunito';
+    user-select: none;
 }
 
 
@@ -10,6 +11,7 @@
     justify-content: space-between;
     position: sticky;
     top: 0;
+    user-select: none;
 }
 
 .searchDiv,
@@ -40,8 +42,9 @@
 
 .counterNum {
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 35px;
     color: #272951;
+    padding-left: 5%;
 }
 
 .counterMode {

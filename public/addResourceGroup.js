@@ -23,8 +23,8 @@ function getGroupData() {
 
     // Prepare the object with the data from the modal above
     var resourceGroup = {
-        TaskTitle: title,
-        TaskDescription: description,
+        resourceTitle: title,
+        resourceDescription: description,
       
     };
 
@@ -48,7 +48,7 @@ function getGroupData() {
             <i class="fa-solid fa-up-right-from-square"></i>
           </div>
           <div class="groupTitle">
-          ${resourceGroup.TaskTitle}
+          ${resourceGroup.resourceTitle}
           </div>
           <div class="smallerIcons">
             <i class="fa-solid fa-pen"></i>
@@ -61,7 +61,7 @@ function getGroupData() {
         </div>
 
         <div class="cardDescription">
-          <p>${resourceGroup.TaskDescription}
+          <p>${resourceGroup.resourceDescription}
 
           </p>
         </div>

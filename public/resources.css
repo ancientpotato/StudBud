@@ -122,3 +122,19 @@
     cursor: pointer;
     font-weight: bolder;
 }
+
+.addGroup:hover,
+.viewMore:hover,
+.addResource:hover {
+    color: white;
+    background-color: #272951;
+}
+
+.cancel-group,
+.save-group {
+    margin-left: 35px;
+}
+
+.resources {
+    margin-bottom: 1%;
+}

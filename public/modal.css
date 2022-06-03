@@ -19,10 +19,27 @@
     cursor: pointer;
 }
 
+.addResource {
+    background-color: #00A99D;
+    border-style: none;
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 20px;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+
 .groupModal,
 .columnModal,
 .timerModal,
-.taskModal {
+.taskModal,
+.resourceModal {
     display: none;
     margin: auto;
     position: fixed;
@@ -103,7 +120,8 @@
 }
 
 
-.addGroupModalContent {
+.addGroupModalContent,
+.addResourceModalContent {
     background-color: white;
     border-radius: 30px;
     width: 40%;
@@ -112,7 +130,8 @@
     display: flex;
 }
 
-.groupModalRightSide {
+.groupModalRightSide,
+.resourceModalLeftSide {
     margin-left: 10%;
 }
 
@@ -126,16 +145,33 @@
     
 }
 
-.taskModalRight {
+.taskModalRight,
+.resourceModalRightSide {
     margin-left: 10%;
 }
 
 .taskUserInputTitle::placeholder,
 .taskUserInputDescription::placeholder,
-.taskUserInputDueDate::placeholder {
+.taskUserInputDueDate::placeholder,
+.groupUserInputDescription::placeholder,
+.groupUserInputTitle::placeholder,
+.resourceUserInputTitle::placeholder,
+.resourceUserInputDescription::placeholder,
+.resourceUserInputLink::placeholder{
     color: #888A9F;
     font-weight: initial;
 }
+
+.resourceUserInputTitle,
+.resourceUserInputDescription {
+    width: 100%;
+}
+
+.resourceModalRightSide {
+    margin-top: 8%;
+}
+
+
 
 .addColumnModalContent {
     background-color: white;
@@ -181,7 +217,8 @@
 }
 
 .addColumnModalContent h1,
-.taskModalContent h1 {
+.taskModalContent h1,
+.addResourceModalContent h1 {
     font-weight: bolder;
     color: #272951;
     padding-top: 30px;
@@ -204,7 +241,9 @@
 .save-task,
 .cancel-task,
 .cancel-group,
-.save-group {
+.save-group,
+.cancel-resource,
+.save-resource {
     font-size: 25px;
     font-weight: bolder;
     border-radius: 5px;
@@ -227,7 +266,8 @@
 .cancel-column,
 .cancel-timer,
 .cancel-stopwatch,
-.cancel-task {
+.cancel-task,
+.cancel-resource {
     color: #272951;
     background-color: #E8EDF6;
 }
@@ -241,7 +281,8 @@
 .start-timer,
 .start-stopwatch,
 .save-task,
-.save-group {
+.save-group,
+.save-resource {
     color: white;
     background-color: #00A99D;
 }
@@ -262,8 +303,7 @@
  
 }
 
-.groupUserInputTitle,
-.groupUserInputDescription,
+
 .taskUserInputTitle,
 .taskUserInputDescription,
 .taskUserInputDueDate,
@@ -274,6 +314,16 @@
     margin-left: 35px;
     border-color: #272951;
     font-size: 20px;
+}
+
+.groupUserInputTitle,
+.groupUserInputDescription {
+    border-radius: 5px;
+    width: 80%;
+    margin-left: 35px;
+    border-color: #272951;
+    font-size: 20px;
+
 }
 
 .taskPriorityRadioButtons input[type="radio"],

@@ -425,12 +425,38 @@
       </div>
     </div>
 
+    <!-- Add Single Resource Modal -->
+    <div id="addresourceModal" class="resourceModal">
+      <div class="addResourceModalContent">
+        <div class="resourceModalLeftSide">
+          <h1><b>Add Resource</b></h1>
+          <label class="modalSubheading" for="resource-title"><b>Title</b></label>
+          <br>
+          <input id="resource-title" class="resourceUserInputTitle" type="text" placeholder="Name of Resource" name="resource-title"
+            required>
+          <br><br>
+          <label class="modalSubheading" for="resource-description"><b>Description</b></label>
+          <br>
+          <textarea id="resource-description" class="resourceUserInputDescription" placeholder="About Resource"
+            name="resource-description" rows="4" cols="30"></textarea>
+        </div>
+        <div class="resourceModalRightSide">
+          <label class="modalSubheading" for="resource-link"><b>Link</b></label>
+          <br>
+          <textarea id="resource-link" class="resourceUserInputLink" placeholder="Link of Resource"
+            name="resource-link" rows="2" cols="30"></textarea>
+            <br><br>
+          <button type="button" onclick="closeResourceModal()" class="cancel-resource">Cancel</button>
+          <button type="submit" onclick="getResourceData()" class="save-resource">Save</button>
+        </div>
+      </div>
+    </div>
+
     <div class="resourceContent">
       <h2>Resource List<h2>
           <button id="groupBtn" onclick="openGroupModal()" class="addGroup">+ add group</button>
     </div>
     <div id="groupCard" class="cardContainers">
-     
         <div class="card">
           <div class="cardContent">
             <div class="cardTop">
@@ -464,7 +490,9 @@
               <button type="button" onclick="viewResourceLinks()" class="viewMore">View More</button>
             </div>
           </div>
-          <div class="expandedArea">
+          
+          <div id="resourceContainer" class="expandedArea">
+            <button id="resourceBtn" class="addResource" onclick="openResourceModal()">+ add resources</button>
             <div class="resources">
               <div class="resourceTopRow">
                 <div class="resourceTitle">Lorem ipsum</div>
