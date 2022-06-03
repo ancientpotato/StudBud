@@ -91,7 +91,8 @@ For the resource buttons, initially, upon clicking on the view more button, the 
 <img src="markdown image assets/Screenshot5.png" alt="Image of resource page in mockups" width="600px"> <br>
 _(mockups)_ <br>
 <img src="markdown image assets/Screenshot6.png" alt="Image of resource page on the final web app" width="600px"> <br>
-_(button in web app in new location)_
+_(button in web app in new location)_ <br>
+I also changed the text of the button in the timer/stopwatch modals from "Cancel" to "Exit". From user feedback, the cancel button gave them the impression that it was the button to stop the timer but it was only closing the modal. Changing it to 'Exit' removes that misunderstanding.
 
 <br><br><br>
 
