@@ -8,26 +8,28 @@ var isVisible = false;
 var selectedResource = 0;
 
 function viewResourceLinks(index) {
-    
-    if (isVisible) {
-        isVisible = false;
-        expandBtn[index].innerHTML = "View More";
-        document.getElementsByClassName('card')[index].style.width = "400px";
-        document.getElementsByClassName('expandedArea')[index].style.width = undefined;
-        document.getElementsByClassName('expandedArea')[index].style.display = "none";
-        document.getElementsByClassName('card')[index].style.position = "relative";
-        document.getElementsByClassName('card')[index].style.zIndex = "0";
 
-    } else {
-        isVisible = true;
-        expandBtn[index].innerHTML = "< back";
-        document.getElementsByClassName('card')[index].style.width = "80%";
-        document.getElementsByClassName('expandedArea')[index].style.width = "100%";
-        document.getElementsByClassName('expandedArea')[index].style.display = "block";
-        document.getElementsByClassName('card')[index].style.position = "absolute";
-        document.getElementsByClassName('card')[index].style.zIndex = "1";
-        selectedResource = index;
-    }
+  //onclick, the display changes and reveals information or collapses the information
+  //the index is the resource card array so when a user adds information, it will make sure that it ends up on the correct resource card
+  if (isVisible) {
+    isVisible = false;
+    expandBtn[index].innerHTML = "View More";
+    document.getElementsByClassName('card')[index].style.width = "400px";
+    document.getElementsByClassName('expandedArea')[index].style.width = undefined;
+    document.getElementsByClassName('expandedArea')[index].style.display = "none";
+    document.getElementsByClassName('card')[index].style.position = "relative";
+    document.getElementsByClassName('card')[index].style.zIndex = "0";
+
+  } else {
+    isVisible = true;
+    expandBtn[index].innerHTML = "< back";
+    document.getElementsByClassName('card')[index].style.width = "80%";
+    document.getElementsByClassName('expandedArea')[index].style.width = "100%";
+    document.getElementsByClassName('expandedArea')[index].style.display = "block";
+    document.getElementsByClassName('card')[index].style.position = "absolute";
+    document.getElementsByClassName('card')[index].style.zIndex = "1";
+    selectedResource = index;
+  }
 }
 
 //JS for adding your own resources
@@ -36,11 +38,11 @@ var resourceModal = document.getElementById("addresourceModal");
 
 
 function openResourceModal() {
-    resourceModal.style.display = "block";
+  resourceModal.style.display = "block";
 }
 
 function closeResourceModal() {
-    resourceModal.style.display = "none";
+  resourceModal.style.display = "none";
 }
 
 //List for resource
@@ -48,35 +50,35 @@ var resourceCardItems = [];
 
 function getResourceData() {
 
-    //Hides modal once user clicks save
-    resourceModal.style.display = "none";
+  //Hides modal once user clicks save
+  resourceModal.style.display = "none";
 
-    //Get data from inputs in the modal
-    var title = document.getElementById('resource-title').value;
-    var description = document.getElementById('resource-description').value;
-    var link = document.getElementById('resource-link').value;
+  //Get data from inputs in the modal
+  var title = document.getElementById('resource-title').value;
+  var description = document.getElementById('resource-description').value;
+  var link = document.getElementById('resource-link').value;
 
-    // Prepare the object with the data from the modal above
-    var resource = {
-        resourceTitle: title,
-        resourceDescription: description,
-        resourceLink: link
-      
-    };
+  // Prepare the object with the data from the modal above
+  var resource = {
+    resourceTitle: title,
+    resourceDescription: description,
+    resourceLink: link
 
-    // Store object into list array
-    resourceCardItems.push(resource);
+  };
 
-    // Call function which creates a resource card using the above data
-    var resourcehtml = resourceTemplate(resource);
+  // Store object into list array
+  resourceCardItems.push(resource);
 
-    // Get the resource card elements
-    var resourceCard = document.getElementsByClassName('expandedArea')[selectedResource];
+  // Call function which creates a resource card using the above data
+  var resourcehtml = resourceTemplate(resource);
 
-    resourceCard.insertAdjacentHTML('beforeend', resourcehtml);
+  // Get the resource card elements
+  var resourceCard = document.getElementsByClassName('expandedArea')[selectedResource];
 
-    function resourceTemplate(resource) {
-        return `<div class="resources">
+  resourceCard.insertAdjacentHTML('beforeend', resourcehtml);
+
+  function resourceTemplate(resource) {
+    return `<div class="resources">
         <div class="resourceTopRow">
           <div class="resourceTitle">${resource.resourceTitle}</div>
           <i class="fa-solid fa-pen editIcon"></i>
@@ -87,17 +89,16 @@ function getResourceData() {
           <a class="resourceLink" href="${resource.resourceLink}" target="_blank">${resource.resourceLink}</a>
         </div>
       </div>`
-    }
+  }
 }
 
 //JS for onclick event where clicking on the icon will open 
 //all links within resource group
-
 function openAllLink() {
-    //https://stackoverflow.com/questions/15843581/how-to-correctly-iterate-through-getelementsbyclassname
-    links = document.querySelectorAll('.resourceLink')
+  //Code from Stack overflow (referenced in markdown)
+  links = document.querySelectorAll('.resourceLink')
 
-    links.forEach(function(element) {
-        window.open(element.innerHTML);
-    });
+  links.forEach(function (element) {
+    window.open(element.innerHTML);
+  });
 }

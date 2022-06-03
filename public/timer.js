@@ -13,39 +13,41 @@ var startBtn = document.getElementById('timerBtn');
 var timerStatus = document.getElementById('counterMode');
 
 function startTimer() {
-    //the timer starts/restarts when button is clicked
-    if (isTimerRunning) {
-        isTimerRunning = false;
-        startBtn.innerHTML = "Start";
-        clearInterval(timer);
+  //the timer starts/restarts when button is clicked
+  if (isTimerRunning) {
+    isTimerRunning = false;
+    startBtn.innerHTML = "Start";
+    clearInterval(timer);
 
-    } else {
-        //when clicked, button will change and timer stops
-        isTimerRunning = true;
-        startBtn.innerHTML = "Stop";
-        time = (initialTimeInMins * 60) - 1;
-        timer = setInterval(updateCountdown, 1000);
-        timerStatus.innerHTML = "FOCUS MODE!"
-    }
+  } else {
+    //when clicked, button will change and timer stops
+    isTimerRunning = true;
+    startBtn.innerHTML = "Stop";
+    time = (initialTimeInMins * 60) - 1;
+    timer = setInterval(updateCountdown, 1000);
+    timerStatus.innerHTML = "FOCUS MODE!"
+  }
 }
 
+//Function updates every second to run this code
 function updateCountdown() {
-    var minutes = Math.floor(time / 60);
-    var seconds = time % 60;
+  var minutes = Math.floor(time / 60);
+  var seconds = time % 60;
 
-    timerCountdown.innerHTML = `${minutes}:${seconds}`;
-    countdownTimerModal.innerHTML = `${minutes}:${seconds}`;
-    time = time - 60;
+  timerCountdown.innerHTML = `${minutes}:${seconds}`;
+  countdownTimerModal.innerHTML = `${minutes}:${seconds}`;
+  time--;
 
-    if (time <= 0) {
-        if (isBreakTime) {
-            isBreakTime = false;
-            time = (initialTimeInMins * 60) - 1;
-            timerStatus.innerHTML = "FOCUS MODE!"
-        } else {
-            isBreakTime = true;
-            time = (breakTimeinMins * 60) - 1;
-            timerStatus.innerHTML = "BREAK TIME!"
-        }
-    } 
+  //once the timer goes below 0, it will run the next conditional to go into the break time phase
+  if (time <= 0) {
+    if (isBreakTime) {
+      isBreakTime = false;
+      time = (initialTimeInMins * 60) - 1;
+      timerStatus.innerHTML = "FOCUS MODE!"
+    } else {
+      isBreakTime = true;
+      time = (breakTimeinMins * 60) - 1;
+      timerStatus.innerHTML = "BREAK TIME!"
+    }
+  }
 }
