@@ -5,22 +5,28 @@ var expandBtn = document.getElementsByClassName('viewMore');
 var addResource = document.getElementById('groupBtn');
 
 var isVisible = false;
+var selectedResource = 0;
 
-function viewResourceLinks() {
+function viewResourceLinks(index) {
     
     if (isVisible) {
         isVisible = false;
-        expandBtn[0].innerHTML = "< back";
-        document.getElementsByClassName('card')[0].style.width = "100%";
-        document.getElementsByClassName('expandedArea')[0].style.width = "100%";
-        document.getElementsByClassName('expandedArea')[0].style.display = "block";
+        expandBtn[index].innerHTML = "View More";
+        document.getElementsByClassName('card')[index].style.width = "400px";
+        document.getElementsByClassName('expandedArea')[index].style.width = undefined;
+        document.getElementsByClassName('expandedArea')[index].style.display = "none";
+        document.getElementsByClassName('card')[index].style.position = "relative";
+        document.getElementsByClassName('card')[index].style.zIndex = "0";
+
     } else {
         isVisible = true;
-        expandBtn[0].innerHTML = "View More";
-        document.getElementsByClassName('card')[0].style.width = "400px";
-        document.getElementsByClassName('expandedArea')[0].style.width = undefined;
-        document.getElementsByClassName('expandedArea')[0].style.display = "none";
-      
+        expandBtn[index].innerHTML = "< back";
+        document.getElementsByClassName('card')[index].style.width = "80%";
+        document.getElementsByClassName('expandedArea')[index].style.width = "100%";
+        document.getElementsByClassName('expandedArea')[index].style.display = "block";
+        document.getElementsByClassName('card')[index].style.position = "absolute";
+        document.getElementsByClassName('card')[index].style.zIndex = "1";
+        selectedResource = index;
     }
 }
 
@@ -65,7 +71,7 @@ function getResourceData() {
     var resourcehtml = resourceTemplate(resource);
 
     // Get the resource card elements
-    var resourceCard = document.getElementById('resourceContainer');
+    var resourceCard = document.getElementsByClassName('expandedArea')[selectedResource];
 
     resourceCard.insertAdjacentHTML('beforeend', resourcehtml);
 
@@ -78,8 +84,20 @@ function getResourceData() {
         <div class="resourceDescription">${resource.resourceDescription}</div>
         <div class="resourceBottomRow">
           <i class="fa-solid fa-link"></i>
-          <div class="resourceLink">${resource.resourceLink}</div>
+          <a class="resourceLink" href="${resource.resourceLink}" target="_blank">${resource.resourceLink}</a>
         </div>
       </div>`
     }
+}
+
+//JS for onclick event where clicking on the icon will open 
+//all links within resource group
+
+function openAllLink() {
+    //https://stackoverflow.com/questions/15843581/how-to-correctly-iterate-through-getelementsbyclassname
+    links = document.querySelectorAll('.resourceLink')
+
+    links.forEach(function(element) {
+        window.open(element.innerHTML);
+    });
 }

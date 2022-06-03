@@ -7,6 +7,7 @@
     box-shadow: 10px 10px 10px #E8EDF6;
     margin-left: 20px;
     display: flex;
+    margin-bottom: 2%;
     
 }
 
@@ -40,6 +41,10 @@
     max-height: 210px;
 }
 
+.cardContent {
+    max-width: 400px;
+}
+
 .expandButton button {
     background-color: #00A99D;
     border-style: none;
@@ -66,6 +71,8 @@
 .smallerIcons {
     font-size: 30px;
     color: #272951;
+    border-style: none;
+    background-color: white;
 }
 
 .smallerIcons:hover {
@@ -79,7 +86,7 @@
 
 
 .resources {
-    width: 130vh;
+    width: 90%;
     border-style: solid;
     padding: 10px;
     border-radius: 7px;

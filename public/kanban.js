@@ -1,5 +1,9 @@
 //Kanban Modal
 var taskModal = document.getElementById("addTaskModal");
+// Get the column elements
+var todoCol = document.getElementById('kanBanToDo');
+var inProgressCol = document.getElementById('kanBanInProgress');
+var doneCol = document.getElementById('kanBanDone');
 
 function openTaskModal() {
     taskModal.style.display = "block";
@@ -13,6 +17,29 @@ function closeTaskModal() {
 var toDoItems = [];
 var inProgressItems = [];
 var doneItems = [];
+
+// set kanban arrays to what is in local storage
+// Storing objects code from Stack overflow (referenced in markdown)
+toDoItems = JSON.parse(localStorage.getItem('toDoItems'));
+inProgressItems = JSON.parse(localStorage.getItem('inProgressItems'));
+doneItems = JSON.parse(localStorage.getItem('doneItems'));
+
+if (!toDoItems) {
+  // if there is nothing in local storage;
+  toDoItems = [];
+}
+
+if (!inProgressItems) {
+  // if there is nothing in local storage;
+  inProgressItems = [];
+}
+
+if (!doneItems) {
+  // if there is nothing in local storage;
+  doneItems = [];
+}
+
+loadStoredKanbans();
 
   function getKanBanData() {
 
@@ -47,31 +74,26 @@ var doneItems = [];
       
     };
 
-    // Store object into list array
-    toDoItems.push(kanBan);
-    inProgressItems.push(kanBan);
-    doneItems.push(kanBan);
-
     // Call function which creates a card using the above data
     var kanBanhtml = kanBanTemplate(kanBan);
-
-    // Get the column elements
-    var todoCol = document.getElementById('kanBanToDo');
-    var inProgressCol = document.getElementById('kanBanInProgress');
-    var doneCol = document.getElementById('kanBanDone');
-
-    
   
     /* Depending on the status that the user chooses in the modal,
     this conditional will ensure that it ends up in the right column*/
     if (document.getElementById('status1').checked) {
         doneCol.insertAdjacentHTML('beforeend', kanBanhtml);
+        doneItems.push(kanBan);
+        // Storing objects code from Stack overflow (referenced in markdown)
+        localStorage.setItem('doneItems', JSON.stringify(doneItems));
 
     } else if (document.getElementById('status2').checked) {
         inProgressCol.insertAdjacentHTML('beforeend', kanBanhtml);
+        inProgressItems.push(kanBan);
+        localStorage.setItem('inProgressItems', JSON.stringify(inProgressItems));
 
     } else if (document.getElementById('status3').checked) {
         todoCol.insertAdjacentHTML('beforeend', kanBanhtml);
+        toDoItems.push(kanBan);
+        localStorage.setItem('toDoItems', JSON.stringify(toDoItems));
 
     }
 
@@ -123,3 +145,20 @@ function kanBanTemplate(kanBan) {
     }
   
   }
+
+function loadStoredKanbans() {
+  doneItems.forEach(function(kanban) {
+    var html = kanBanTemplate(kanban);
+    doneCol.insertAdjacentHTML('beforeend', html);
+  });
+
+  inProgressItems.forEach(function(kanban) {
+    var html = kanBanTemplate(kanban);
+    inProgressCol.insertAdjacentHTML('beforeend', html);
+  });
+
+  toDoItems.forEach(function(kanban) {
+    var html = kanBanTemplate(kanban);
+    todoCol.insertAdjacentHTML('beforeend', html);
+  });
+}
